@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>toán tử</title>
+</head>
+<body>
+<h4> nhập điểm môn toán </h4>
+<input type="number" id="a">
+<h4>nhập điểm môn lý</h4>
+<input type="number" id="b">
+<h4> nhập điểm môn hóa</h4>
+<input type="number" id="c"><td>
+    <button onclick="tbinh()" id="d" type="submit"></td>
+<h4>tính điểm trung bình :</h4>
+<script>
+    function tbinh(){
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let c = +document.getElementById("c").value;
+        let d = document.getElementById("d").value;
+        let result;
+        result=(a+b+c)/3;
+        document.getElementById("d").innerText= result ;
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

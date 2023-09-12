@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><table>
+    <tr>
+        <td><input id="a" type="text"></td>
+        <td></td>
+        <td><input id="b" type="number"></td>
+        <td></td>
+        <td><button  onclick="toConvertAdd()" >cộng</button></td>
+        <td><button onclick="toConvertSud()">trừ</button> </td>
+    </tr>
+</table>
+<h4 onclick="toConvertAdd()" id="result">result:</h4>
+<p onclick="toConvertSud()" id="p-result"></p>
+<script>
+    function toConvertAdd(){
+    let a =+document.getElementById("a").value;
+    let b =+document.getElementById("b").value;
+    let result=0;
+result=a + b;
+document.getElementById("result").innerText=result;
+
+        }
+        function toConvertSud(){
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let result=0;
+        result=a-b;
+        document.getElementById("result").innerText=result;
+
+        }
+
+</script>
+
+</body>
+</html>
