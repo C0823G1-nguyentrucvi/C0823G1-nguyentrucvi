@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>xếp hạng học lực </title>
 </head>
 <body>
-$END$
+<script>
+    let a =prompt("điểm kiểm tra");
+    let b= prompt(" điểm thi giữa kì ");
+    let c=prompt("điểm thi cuối kì");
+
+    if(a && b && c >= 9){
+        document.write("học lực giỏi");
+    } else (7 <a && b && c < 9 ){
+        document.write(" học lực khá");
+    }else (a && b && c < 7){
+        document.write("học lực trung bình")
+    }
+</script>
+
 </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+Nhập số điện <input type="number" id="a">
+<button onclick="calPow()">tính</button>
+<p id="result"></p>
+<script>
+    function calPow() {
+        let a = document.getElementById("a").value;
+        let result;
+        if (a <= 10) {
+            result = a * 2;
+
+        } else if (a <= 20) {
+            result = 20 + (a - 10) * 3
+        } else if (a <= 30) {
+            result = 50 + (a - 20) * 4
+        } else if (a <= 40) {
+            result = 90 + (a - 30) * 5
+
+        }
+        else if(a>40){
+            result = 140+(a-40)*5
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+
+</script>
+</body>
+</html>

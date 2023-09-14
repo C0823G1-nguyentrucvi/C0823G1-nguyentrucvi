@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>chỉ số cân nặng của cơ thể</title>
 </head>
 <body>
-$END$
+<script>
+    let a = prompt("chiều cao");
+    let b = prompt("cân nặng ");
+    let BMI = b/(a^2);
+    if (BMI < 18){
+        document.write("Umderweight");
+    } else if ( BMI < 25.0){
+        document.write("normal");
+    }else if ( BMI < 30.0){
+        document.write("Overweight");
+        }else{
+        document.write("Obese");
+    }
+
+</script>
 </body>
 </html>
