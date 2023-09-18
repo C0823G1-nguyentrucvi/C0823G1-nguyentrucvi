@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button onclick="mouse()"> bắt đầu</button>
+
+<script>
+    function mouse() {
+        let a = prompt("số bạn muốn đoán trong khoảng là bao nhiêu?");
+        let random = Math.floor(Math.random() * a);
+        let max = 3;
+        for (let i = 1; i <= 3; i++) {
+            let b = prompt(" nhập số bạn đoán");
+            if (b < random) {
+                alert("số bạn đoán bé hơn");
+            } else if (b > random) {
+                alert("số lớn hơn bạn đoán");
+            } else if (b = random) {
+                alert("chúc mừng bạn đang đoán trúng");
+            }
+        }
+        document.write("bạn đã hết lượt");
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = "&nbsp&nbsp";
+    let b = "*";
+    for (let i = 1; i < 6; i++) {
+        for (let j = 1; j < 6; j++) {
+            if (j <= i) {
+                document.write(b)
+
+            } else {
+                document.write(a)
+            }
+        }
+        document.write("<br/>")
+    }
+    document.write("<br/>")
+
+    for (let k = 6; k > 1; k--) {
+        for (let j = 1; j < k; j++) {
+            document.write(b)
+        }
+        document.write('<br>')
+    }
+</script>
+</body>
+</html>
