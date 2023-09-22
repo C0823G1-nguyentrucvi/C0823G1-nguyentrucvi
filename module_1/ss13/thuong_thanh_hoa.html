@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    debugger
+    let arr = 'I Love You Fogerver';
+    let UPPER = 'ABCBDEFGHIJKLMNOPQRSTUVWXYZ';
+    let LOWER='abcdefghijklmnopqrstuvwxyz';
+    let result = [];
+    for (let index = 0; index < arr.length; index++) {
+        if (UPPER.indexOf(arr[index]) !== -1){
+            result.push(arr[index].toLowerCase());
+        }else if(LOWER.indexOf(arr[index]) !== -1){
+            result.push(arr[index].toUpperCase());
+        }else{
+            result.push(arr[index]);
+        }
+    }document.write(result.join(''));
+</script>
+
+</body>
+</html>

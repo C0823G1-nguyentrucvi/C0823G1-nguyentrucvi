@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [12, 3, 4, 5, 6, 78, 99, 23, 45, 2];
+    let max = [0];
+    let sum = 0;
+    for (let i = 1; i <= arr.length-1; i++) {
+        sum += arr[i];
+        if (arr[i] > max) {
+            max = arr[i];
+
+        }
+    }
+    sum = sum / arr.length;
+
+
+    document.write("tong cua cac gia tri " + sum + "số lớn nhất " + max);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("nhap so luong mang 1: ");
+    let myArray = new Array(a);
+    for (let i = 0; i < myArray.length; i++) {
+        myArray[i] = +prompt("nhap so ");
+    }
+    console.log(myArray);
+    let b = +prompt("nhap so luong mang 2: ");
+    let myArray2 = new Array(b);
+    for (let i = 0; i < myArray2.length; i++) {
+        myArray2[i] = +prompt("nhap so mang 2: " + i);
+    }
+    console.log(myArray2);
+    let c = a + b;
+    let myArray3 = [];
+    for (let i = 0; i < myArray.length; i++) {
+        myArray3.push(myArray[i]);
+
+    }
+    for (let i = 0; i < myArray2.length; i++) {
+        myArray3.push(myArray2[i]);
+    }
+    console.log(myArray3);
+</script>
+</body>
+</html>

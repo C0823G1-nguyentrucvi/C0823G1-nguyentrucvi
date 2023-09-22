@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let arr = +prompt(" số nguyên: ");
+    // let result = [0];
+    // for (let i = 1; i < arr.length; i++) {
+    //     if (isNaN(arr[i]) === false) {
+    //         document.write(arr[i] + " is  in the array" + "</br>");
+    //     } else {
+    //         document.write(arr[i] + " is not in the array" + "<br>");
+    //     }
+    // }
+
+    let v = +prompt("Nhap so nguyen V: ") //5
+    let arr = []; // 1 7 6 2 8 9
+    let size = +prompt("Nhap vao do dai cua mang: ");
+    for (let i = 0; i < size; i++) {
+        arr[i] = +prompt("Nhap phan tu thu " + i + ": ");
+    }
+    let check = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === v) {
+            check = 1;
+            break;
+        }
+    }
+    if (check === 1) {
+        document.write(v + " is  in the array" + "</br>");
+    } else {
+        document.write(v + " is not in the array" + "<br>");
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let notify =  prompt("nhap do dai so nguyen: ");
+    let arr = notify.split('');
+    for (let i = 0; i < arr.length ; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[j] < arr[j + 1]) {
+                max = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j+1] = max;
+            }
+        }
+    }
+    document.write(arr);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

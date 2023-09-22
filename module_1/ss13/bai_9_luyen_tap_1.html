@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("nhap vao so luong phan tu mang 1: "); // so luong pt
+    let myArray = new Array(a); // mang
+    for (let index = 0; index < myArray.length; index++) {
+        myArray[index] = +prompt("nhap phan tu: " + index);
+    }
+    console.log(myArray);
+    let b = +prompt("nhap vao so luong phan tu mang 2: ");
+    let myArray2 = new Array(b);
+    for (let index = 0; index < myArray2.length; index++) {
+        myArray2[index] = +prompt("nhap phan tu thu " + index + ": ");
+    }
+    console.log(myArray2);
+    let myArray3 = [];
+    for (let index = 0; index < myArray.length; index++) {
+        myArray3.push(myArray[index]);
+    }
+    for (let index = 0; index < myArray2.length; index++) {
+        myArray3.push(myArray2[index]);
+    }
+    console.log(myArray3)
+    //B1: Duyet qua mang 1 va push tung phan tu vao mang 3
+    //B2: Duyet tiep mang 2 va tiep tuc push tung phan tu vao mang 3
+
+
+</script>
+</body>
+</html>

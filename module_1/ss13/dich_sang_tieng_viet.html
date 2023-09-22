@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <p>nhập từ :</p></td>
+        <td><input type="text" id="string"></td>
+        <td>
+            <button onclick="monkey()" >dịch</button>
+
+        </td>
+    </tr>
+</table>
+<p id="result"></p>
+
+<script>
+    function monkey() {
+        debugger
+        let arr_eng = ["monkey", "book", "pencil", "banana"];
+        let arr_viet = ["con khỉ", "sách", "bút chì", "chuối"];
+        let index_eng = 0;
+        let string = document.getElementById("string").value;
+        for (let index = 0; index < arr_eng.length; index++) {
+            if (string === arr_eng[index]) {
+                index_eng = index;
+
+            }
+        }
+        result = arr_viet[index_eng];
+        document.getElementById("result").innerHTML = result;
+
+    }
+
+</script>
+
+</body>
+</html>
