@@ -6,16 +6,18 @@
 </head>
 <body>
 <script>
-    let soNguyen = [4,3,2];
+    let soNguyen = [4, 3, 2];
 
     function tinhSoNguyen(soNguyen) {
-        let min= soNguyen[0];
-        for (let i = 1; i < soNguyen.length; i++){
-            if(soNguyen[i] <  min)
-        min = soNguyen[i];
-      alert(min);
+        let min = soNguyen[0];
+        for (let i = 1; i < soNguyen.length; i++) {
+            if (soNguyen[i] < min)
+                min = soNguyen[i];
+            alert(min);
+        }
     }
-    }tinhSoNguyen(soNguyen);
+
+    tinhSoNguyen(soNguyen);
 </script>
 </body>
 </html>

@@ -9,26 +9,24 @@
     let arr = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
     let arr2d = ["Ursa Minor", "Tarurus", " Cygnus", "Lyra", "Aquila", "Ursa Major", " Leo"];
 
-    let a= prompt("ngoi sao");
+    let a = prompt("ngoi sao");
     timStar(a);
 
 
     function timStar(star) {
         let tim = false;
-       for (let i = 0 ; i < arr.length;i++){
-           if (star === arr[i]){
-               tim=true;
-               alert(arr2d[i])
-           }
-       }
-         if (tim === false) {
+        for (let i = 0; i < arr.length; i++) {
+            if (star === arr[i]) {
+                tim = true;
+                alert(arr2d[i])
+            }
+        }
+        if (tim === false) {
             alert("không tìm thấy ");
         }
 
 
     }
-
-
 
 
 </script>

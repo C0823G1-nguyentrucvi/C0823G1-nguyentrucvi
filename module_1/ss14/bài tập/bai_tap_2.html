@@ -6,19 +6,21 @@
 </head>
 <body>
 <script>
-    let foot =+prompt("nhap foot: ");
-    let meter=+prompt("nhap meter: ");
+    let foot = +prompt("nhap foot: ");
+    let meter = +prompt("nhap meter: ");
+
     function footToMeter(footNum) {
 
-        return  0.305 * footNum;
+        return 0.305 * footNum;
     }
 
     function meterToFoot(meterNum) {
 
         return 3.279 * meterNum;
     }
-    document.write(foot + "foot="+ footToMeter(foot)+"meter"+"</br>");
-    document.write(meter+"meter="+meterToFoot(meter)+"foot"+"</br>");
+
+    document.write(foot + "foot=" + footToMeter(foot) + "meter" + "</br>");
+    document.write(meter + "meter=" + meterToFoot(meter) + "foot" + "</br>");
 </script>
 
 </body>
