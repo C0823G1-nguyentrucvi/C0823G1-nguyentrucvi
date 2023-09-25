@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x = +prompt("nhap so nguyen thu nhat: ");
+    let y = +prompt("nhap so nguyen thu hai: ");
+
+    function swap(x, y) {
+        let count = x;
+        x = y;
+        y = count;
+        document.write(x);
+        document.write(y);
+    }
+
+    swap(x, y);
+
+</script>
+</body>
+</html>
