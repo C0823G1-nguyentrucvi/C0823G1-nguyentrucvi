@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor(battery, editor, receivedMessage, sentMessage, status) {
+            this.receivedMessage = receivedMessage;
+            this.sentMessage = sentMessage;
+            this.battery = battery;
+            this.editor = editor;
+            this.status = status;
+        }
+
+        getBattery() {
+            return this.battery;
+        }
+
+        setBattery(value) {
+            this.battery = value;
+        }
+
+        getEditor() {
+            return this.editor;
+        }
+
+        setEditor(value) {
+            this.editor = value;
+        }
+
+        getReceivedMessage() {
+            return this.receivedMessage;
+        }
+
+        setReceivedMessage(value) {
+            this.receivedMessage = value;
+        }
+
+        getSentMessage() {
+            return this.sentMessage;
+        }
+
+        setSentMessage(value) {
+            this.sentMessage = value;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        setStatus(value) {
+            this.status = value;
+        }
+
+        checkStatus() {
+            this.decreaseBattery()
+            if (this.status) {
+                document.write("May dang bat!");
+            } else {
+                document.write("May dang tat!");
+            }
+        }
+
+        turnOn() {
+            this.status = true;
+            document.write("Máy đã bật!");
+        }
+
+        turnOff() {
+            this.status = false;
+            document.write("Máy đã tắt!");
+        }
+
+        decreaseBattery() {
+            if (this.battery > 0) {
+                this.battery--;
+            } else {
+                this.turnOff();
+            }
+        }
+
+        sendMessage(mobile, message) {
+            this.decreaseBattery()
+            if (this.status) {
+                this.sentMessage.push(message);
+                mobile.getReceivedMessage().push(message);
+            } else {
+                document.write("May chua bat!");
+            }
+        }
+
+    }
+
+    let samsung = new Mobile(100, "", [], [], true);
+
+    let iphone = new Mobile(100, "", [], [], false);
+
+    samsung.sendMessage(iphone, "Hello iphone");
+
+    console.log({samsung, iphone});
+
+</script>
+</body>
+</html>
