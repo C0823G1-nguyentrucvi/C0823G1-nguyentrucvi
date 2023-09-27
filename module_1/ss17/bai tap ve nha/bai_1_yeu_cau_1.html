@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("nhập số lương của bạn: ");
+    if (a >= 15000000) {
+        document.write("số thuế là:" + (a * 0.2) + "và" + (a - (a * 0.2)) + "số lương ròng" + "</br>");
+    } else if (7000000 < a < 15000000) {
+        document.write("số thuế là:" + (a * 0.15) + "và" + (a - (a * 0.15)) + "số lương ròng" + "</br>");
+    } else if (a < 7000000) {
+        document.write("số thuế là:" + (a * 0.05) + "và" + (a - (a * 0.05)) + "số lương ròng" + "</br>");
+    }
+</script>
+</body>
+</html>

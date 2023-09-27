@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="game"></div>
+<script src="script.js"></script>
+<script>
+    function Hero(image, top, left, size) {
+        this.image = image;
+        this.top = top;
+        this.left = left;
+        this.size = size;
+
+        this.getHeroElement = function () {
+            return '<img src="https://file.tinnhac.com/resize/600x-/music/2018/07/26/unnamed-e5d4.jpg" width="' + this.size + '"' +
+                ' height="' + this.size + '"' +
+                ' src="' + this.image + '"' +
+                ' style="top: ' + this.top + 'px; left:' + this.left + 'px;position:absolute;" />';
+        }
+
+        this.moveRight = function () {
+            this.left += 50;
+
+            console.log('ok: ' + this.left);
+        }
+        this.moveLeft = function () {
+            this.right += 50;
+            console.log('ok: ' + this.right);
+       }
+
+    }
+
+    var hero = new Hero('thuyThuMat.png', 50, 100, 400);
+
+    function start() {
+        if (hero.left < window.innerWidth - hero.size) {
+            hero.moveRight();
+        }
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        setTimeout(start, 50)
+    }
+
+    start();
+</script>
+
+
+</body>
+</html>

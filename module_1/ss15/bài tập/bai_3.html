@@ -77,7 +77,7 @@
         decreaseBattery() {
             if (this.battery > 0) {
                 this.battery--;
-            } else {
+            } else if (this.battery < 0) {
                 this.turnOff();
             }
         }
@@ -88,19 +88,20 @@
                 this.sentMessage.push(message);
                 mobile.getReceivedMessage().push(message);
             } else {
-                document.write("May chua bat!");
+                this.turnOn();
+                // document.write("May co bat!");
             }
         }
 
     }
 
-    let samsung = new Mobile(100, "", [], [], true);
+    let samsung = new Mobile(21, "", [], [], true);
 
-    let iphone = new Mobile(100, "", [], [], false);
-
-    samsung.sendMessage(iphone, "Hello iphone");
+    let iphone = new Mobile(21, "", [], [], false);
 
     console.log({samsung, iphone});
+    iphone.sendMessage(samsung, "hi chào cậu");
+    console.log({samsung, iphone})
 
 </script>
 </body>
