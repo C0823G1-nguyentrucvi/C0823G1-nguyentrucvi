@@ -6,19 +6,21 @@
 </head>
 <body>
 <script>
-    let h = +prompt("nhap h vào đây đi: ");
-    let result = "&nbsp&nbsp"
-    for (let i = 0; i < h - 1; i++) {
-        for (let j = 0; j < h * 2 - 1; j++) {
-            if (j >= h - i && j <= h + i) {
-                result += "*"
+    let h = +prompt("nhap h vào đây : ");
+    let result = "";
+    for (let i = 0; i < h; i++) {
+        for (let j = 0; j < h * 2; j++) {
+            if (j === h - i || j === h + i || (i === (h - 1) && j !== 0)) {
+                document.write("*");
             } else {
-                result += "&nbsp&nbsp";
+                document.write("&nbsp&nbsp");
             }
         }
-        result += "</br>";
+        document.write("</br>");
     }
     document.write(result);
+
+
 </script>
 </body>
 </html>
