@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    let h = +prompt("nhap h vào đây đi: ");
+    let result = ""
+    for (let i = 0; i < h; i++) {
+        for (let j = 0; j < h * 2; j++) {
+            if (j >= h - i && j <= h + i) {
+                result += "*"
+            } else {
+                result += "git&nbsp&nbsp";
+            }
+        }
+        result += "</br>";
+    }
+    document.write(result);
+
+
+</script>
+
+</body>
+</html>

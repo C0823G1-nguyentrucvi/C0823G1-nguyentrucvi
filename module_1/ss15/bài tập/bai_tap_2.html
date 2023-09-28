@@ -13,21 +13,23 @@
                 return alert("giá trị nhỏ nhất -273 độ");
             }
 
-            this.C=C;
-            }
+            this.C = C;
+        }
 
-            convertFahrenheit()
-            {
-                return 9 / 5 * this.C + 32;
-            }
+        convertFahrenheit() {
+            return 9 / 5 * this.C + 32;
+        }
+
         convertDegree() {
-                return this.C + 273.15;
-            }
-    } let myC=new Temperature(25);
-    let F=myC.convertFahrenheit();
-    let K=myC.convertDegree();
-    document.write("nhiệt độ F:"+ F+"</br>");
-    document.write("nhiệt độ K:"+ K+"</br>");
+            return this.C + 273.15;
+        }
+    }
+
+    let myC = new Temperature(25);
+    let F = myC.convertFahrenheit();
+    let K = myC.convertDegree();
+    document.write("nhiệt độ F:" + F + "</br>");
+    document.write("nhiệt độ K:" + K + "</br>");
 
 
 </script>

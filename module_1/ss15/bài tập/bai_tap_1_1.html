@@ -21,6 +21,7 @@
         getWidth() {
             return this.width;
         }
+
         setLength(length) {
             this.length = length;
         }
@@ -35,7 +36,7 @@
         }
 
         ChuVi() {
-            return 2*(this.length + this.width);
+            return 2 * (this.length + this.width);
         }
 
 
@@ -47,7 +48,7 @@
 
     let canvas = document.getElementById("Canvas");
     let ctx = canvas.getContext('2d');
-    ctx.fillStyle='#fa4b2a';
+    ctx.fillStyle = '#fa4b2a';
     ctx.fillRect(100, 150, newRectangle.getWidth(), newRectangle.getLength());
 
 </script>
