@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // function kiTu() {
+    debugger
+    let str = "nGuyEn trUc Vi";
+
+    let result = [];
+    let b = " ";
+    let max = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] !== " ") {
+            if (b === " ") {
+                b += str[i].toUpperCase();
+            } else {
+                b += str[i].toLowerCase();
+            }
+        }else {
+            if (b.trim() !== " ") {
+                result.push(b);
+                if (max < b.length) {
+                    max = b.length;
+                }
+                b = " ";
+            }
+        }
+    }
+    console.log(result.join(" "))
+    console.log(max)
+</script>
+</body>
+</html>

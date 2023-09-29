@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let order;
+    let total = 0;
+    let money;
+    do {
+        debugger
+        order = +prompt(`menu
+        1:Cafe
+        2:Cam vắt
+        3:Nước ép cà rốt
+        4:Nước ép cà chua
+        5:Nước lọc
+        6:Nước dừa
+        7:chấm hết.`)
+        switch (order) {
+            case 1:
+                money = +prompt("iá của nước là 7 triệu bạn muốn mua bao nhieu?");
+                total = total + money*7000000;
+                break;
+            case 2:
+                money = +prompt("giá của nước là 7 triệu bạn muốn mua bao nhieu?");
+                total = total + money * 7000000;
+                break;
+            case 3:
+                money = +prompt("giá của nước là 7 triệu bạn muốn mua bao nhieu?");
+                total = total + money * 7000000;
+                break;
+            case 4:
+                money = +prompt("giá của nước là 7 triệu bạn muốn mua bao nhieu?");
+                total = total + money * 7000000;
+                break;
+            case 5:
+                money = +prompt("giá của nước là 7 triệu bạn muốn mua bao nhieu?");
+                total = total + money * 7000000;
+                break;
+            case 6:
+                money = +prompt("giá của nước là 7 triệu bạn muốn mua bao nhieu?");
+                total = total + money * 7000000;
+                break;
+            case 7:
+                break;
+        }
+
+    }while (order!==7);
+    alert(`số tiền cần thanh toán ${total}`);
+</script>
+</body>
+</html>
