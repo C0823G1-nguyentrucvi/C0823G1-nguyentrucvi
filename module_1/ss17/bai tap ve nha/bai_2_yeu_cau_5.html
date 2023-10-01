@@ -6,8 +6,56 @@
 </head>
 <body>
 <script>
-    arr=[]
-    
+
+
+    //let count=0;
+
+
+    function TimSoNguyenTo(arr) {
+        let array = [];
+
+
+        for (let i = 0; i < arr.length; i++) {
+
+
+            for (let j = 0; j < arr[i].length; j++) {
+
+                if (KiemTraSo(arr[i][j])) {
+                    array.push(arr[i][j]);
+
+
+                }
+            }
+
+
+        }
+        return array;
+    }
+
+    let arr = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
+
+    function KiemTraSo(check) {
+        let count = 0;
+        for (let i = 1; i <= check; i++) {
+            if (check % i === 0) {
+                count++;
+            }
+        }
+        if (count === 2) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+
+    console.log(TimSoNguyenTo(arr))
+    console.log("số nguyên tố là : " + TimSoNguyenTo(arr).length)
 </script>
 </body>
 </html>
