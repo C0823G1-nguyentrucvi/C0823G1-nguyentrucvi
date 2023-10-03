@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [
+        [1, 2, 3],
+        [4, 22, 6],
+        [7, 8, 9]
+    ];
+
+    function timGiaTri(arr) {
+        let Array = [];
+
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j]) {
+                    Array.push(arr[i][j]);
+                }
+            }
+
+        }
+        return Array;
+    }
+
+    function minMax(check) {
+        let min = check[0][0];
+        let max = check[0][0];
+
+        for (let i = 1; i < check.length; i++) {
+            for (let j = 1; j < check[i].length; j++) {
+                if (min > check[i][j]) {
+                    min = check[i][j];
+                    count++;
+                }
+                if (max < check[i][j]) {
+                    max = check[i][j];
+                    count++;
+                }
+            }
+
+        }
+        console.log(min);
+        console.log(max);
+
+    }
+
+    minMax(arr);
+
+
+</script>
+</body>
+</html>
