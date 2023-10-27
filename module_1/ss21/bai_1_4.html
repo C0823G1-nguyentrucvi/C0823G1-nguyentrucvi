@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    debugger
+    let ten = prompt(`nhap tên bạn`);
+    console.log(ten);
+    let rong = " ";
+    let hoa;
+    let arr = [];
+    for (let i = 0; i < ten.length; i++) {
+        if (ten[i + 1] !== rong) {
+            if (ten[i] === " " || ten[i] !== ten[i + 1]) {
+                hoa = ten[i].toUpperCase();
+                arr.push(hoa);
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

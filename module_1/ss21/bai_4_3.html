@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let menu ;
+    let money;
+   do {
+    menu = +prompt(`
+    Menu
+    mời bạn chọn:
+    1.cafe
+    2.cam vắt
+    3.nước ép cà rốt
+    4.nước ép cà chua
+    5.nước lọc
+    6.nước dừa
+    7.thoát menu.
+    `);
+        switch (menu) {
+            case 1:
+                money = +prompt(`7 triệu đồng /ly:
+             nhap số lượng bạn muốn order`);
+                alert(` số tiền cần thanh toán ${money * 7} triệu đồng💸💸💸`);
+                break;
+            case 2:
+                money = +prompt(`10 triệu đồng /ly:
+             nhap số lượng bạn muốn order`);
+                alert(` số tiền cần thanh toán ${money * 10} triệu đồng💸💸💸`);
+                break;
+            case 3:
+                money = +prompt(`10 triệu đồng /ly:
+             nhap số lượng bạn muốn order`);
+                alert(` số tiền cần thanh toán ${money * 10} triệu đồng💸💸💸`);
+                break;
+            case 4:
+                money = +prompt(`10 triệu đồng /ly:
+             nhap số lượng bạn muốn order`);
+                alert(` số tiền cần thanh toán ${money * 10} triệu đồng💸💸💸`);
+                break;
+            case 5:
+                money = +prompt(`10 triệu đồng /ly:
+             nhap số lượng bạn muốn order`);
+              alert(` số tiền cần thanh toán ${money * 0.1} triệu đồng💸💸💸`);
+                break;
+            case 6:
+                money = +prompt(`10 triệu đồng /ly:
+             nhap số lượng bạn muốn order`);
+                alert(` số tiền cần thanh toán ${money * 55} triệu đồng💸💸💸`);
+                break;
+
+        }
+   }while (menu<7);
+</script>
+</body>
+</html>
