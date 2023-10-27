@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="color: crimson">NGÂN HÀNG ABC</h1>
+<div id="abcBank"></div>
+<br>
+<button type="submit" onclick="">tên tài khoản</button>
+<br>
+<br>
+<button type="submit">STK ngân hàng</button>
+<br>
+<br>
+<button type="submit">số dư biến động</button>
+<br>
+<br>
+<button type="submit" onclick="withdraw()">RÚT TIỀN</button>
+<br>
+<br>
+<button TYPE="submit" onclick="loaded()">NẠP TIỀN</button>
+<script>
+    class bank {
+
+        constructor(name, stk, money) {
+            this.name = name;
+            this.stk = stk;
+            this.money = money;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getStk() {
+            return this.stk;
+        }
+
+        setStk(stk) {
+            this.stk = stk;
+        }
+
+        getMoney() {
+            return this.money;
+        }
+
+        setMonkey(money) {
+            this.money = money;
+        }
+
+    }
+
+    let trucViBaka = new bank(`nguyen trúc vi`,888888,0);
+    console.log(trucViBaka)
+    // let nem2 = new bank(`anh cong,999999,0`);
+    // let nem3 = new bank(`tan hai,1010101,0`);
+
+
+    function withdraw() {
+        let rut = +prompt("nhập so tiền muốn rút: ");
+        let soTienConLai = trucViBaka.getMoney();
+        if (rut > soTienConLai) {
+            console.log("So du khong du.")
+        } else {
+            trucViBaka.setMonkey(soTienConLai - rut);
+            console.log("Rut thanh cong")
+        }
+        console.log(trucViBaka);
+    }
+
+
+    function loaded() {
+        let nap = +prompt("số tiền muốn nạp: ");
+        if (nap >= 0) {
+            trucViBaka.setMonkey(nap)
+            alert("đã nạp thành công");
+        }
+        console.log(trucViBaka)
+    }
+
+
+
+</script>
+</body>
+</html>

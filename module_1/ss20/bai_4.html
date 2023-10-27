@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let arr = [];
+    let b = +prompt(`nhap độ dài mảng:`);
+    for (let i = 0; i < b; i++) {
+        arr[i] = prompt(`nhap phan tu ${i}`);
+        arr.toString();
+
+    }
+    console.log(arr);
+
+    function checkString(str) {
+
+
+        let count = 0;
+        let temp = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] === str[i].toUpperCase()) {
+                count++;
+
+            } else if (str[i] === str[i].toLowerCase()) {
+                temp++;
+
+            }
+        }
+        if (count === temp) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    let result = checkString(arr);
+    console.log(result);
+
+</script>
+</body>
+</html>

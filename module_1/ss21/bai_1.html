@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt(`nhap vao so luong cua ban`);
+    let money = 0;
+    if (a < 7000000) {
+        money = a * 0.05
+        document.write(money);
+    } else if (a < 15000000 && a > 7000000){
+        money=a*0.1
+        document.write(money)
+    }else if(a>=15000000){
+        money=a*0.2
+        document.write(money);
+    }
+</script>
+</body>
+</html>

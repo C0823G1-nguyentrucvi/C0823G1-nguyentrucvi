@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("nhập số phần tử của mảng : ");
+    let arr = [];
+    let sum = 0;
+    let count = 0;
+    for (let i = 0; i < a; i++) {
+        let b = +prompt(`số phan tử: ${i}`);
+        if (b <= 50) {
+            b = +prompt(`nhap lại số ${i}bé hơn 50`);
+            console.log(`số phần tử  :${b}`);
+        }
+        arr.push(b);
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[j] % 5 === 0 && j % 3 === 0) {
+                sum += arr[i];
+                count++;
+            }
+
+
+        }
+    }
+    console.log(`số phần tử chia het cho 5 ở vị trí chia het cho 3:${count}`);
+    let avg = sum / count
+    console.log(`trung bình : ${avg}`);
+    console.log(`mang là: ${arr}`);
+</script>
+</body>
+</html>

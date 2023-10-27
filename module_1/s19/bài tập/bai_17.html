@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("nhap vào độ dài mảng: ");
+    let arr = [];
+    let b;
+    for (let i = 0; i < a; i++) {
+        b = +prompt("nhap phẩn tử: " + i);
+        arr.push(b);
+    }
+    console.log(arr);
+
+    function check(arr) {
+        let odd = false;
+        let even = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < arr[i += 2]) {
+                odd = true;
+            } else {
+                even = true;
+            }
+        }
+        if (odd) {
+            return "ok";
+        } else {
+            return "no";
+        }
+
+    }
+
+    let bibi = check(arr);
+
+    console.log(bibi);
+</script>
+</body>
+</html>

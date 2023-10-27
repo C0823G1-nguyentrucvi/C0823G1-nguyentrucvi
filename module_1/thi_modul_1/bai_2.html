@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = +prompt("nhap số phần tử mảng: ");
+    let arr = [];
+    let sum = 0;
+    for (let i = 0; i < str; i++) {
+        let b = +prompt(`nhap số phần tử: ${i}`);
+        arr.push(b);
+        console.log(arr)
+    }
+        for (let j = 0; j < arr.length; j++) {
+            if (arr.length <= 100) {
+                if (arr[j] % 2 === 0) {
+                    sum += arr[j];
+                }
+            }
+        }
+
+    console.log(`tổng :${sum}`);
+
+</script>
+</body>
+</html>

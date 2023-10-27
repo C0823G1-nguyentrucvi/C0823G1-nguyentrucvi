@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr2d = +prompt("nhap so luong: ");
+    let arr = [];
+    let b;
+    for (let i = 0; i < arr2d; i++) {
+        b = prompt("nhap vao " + i);
+        arr.push(b);
+    }
+
+    function check(a) {
+        let letter = false;
+        let number = false;
+        for (let i = 0; i < a.length; i++) {
+            if (isFinite(a[i])) {
+                number = true;
+            } else if (isNaN(a[i])) {
+                letter = true;
+            }
+        }
+        if (letter && number) {
+            return -1;
+        } else if (number) {
+            return 1;
+        } else {
+            return 0;
+        }
+
+    }
+
+    let combat = check(arr);
+    console.log(combat);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr2d = +prompt("nhập số lượng phần tử :")
+    let arr = [];
+    for (let i = 0; i < arr2d; i++) {
+        arr[i] = +prompt(`nhap so nguyen ${i}`)
+    }
+    console.log(arr);
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 0 && Math.sqrt(arr[i]) % 1 === 0) {
+            console.log(arr[i]);
+        }
+    }
+</script>
+</body>
+</html>

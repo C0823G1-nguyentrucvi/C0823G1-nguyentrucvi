@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt(`nhap do dai`);
+    let arr = [];
+    for (let i = 0; i < a; i++) {
+        arr[i] = +prompt(`phan tu ${i}`);
+    }
+    console.log(arr);
+    let newA = [];
+
+
+        for (let i = 0; i <=arr.length; i++) {
+            if (arr[i + 1] % arr[i] === 0) {
+                newA.push(arr[i])
+            }
+        }
+        if (newA.length === arr.length - 1) {
+            alert(`ok`);
+        } else {
+            alert(`no`);
+        }
+
+
+
+    console.log(newA)
+
+
+</script>
+</body>
+</html>

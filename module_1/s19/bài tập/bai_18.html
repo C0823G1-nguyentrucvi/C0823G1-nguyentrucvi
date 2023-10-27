@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("nhap  cạnh x: ");
+    let b = +prompt("nhap cạnh y: ");
+    let c = +prompt("nhap cạnh z: ");
+
+    function check(x, y, z) {
+        if (x > 0 && y > 0 && z > 0) {
+            if ((x + y) > z || (x + z) > y || (y + z) > x) {
+                if ((Math.pow(x, 2) + Math.pow(y, 2)) === Math.pow(z, 2) || (Math.pow(x, 2) + Math.pow(z, 2)) === Math.pow(y, 2) || (Math.pow(z, 2) + Math.pow(y, 2)) === Math.pow(x, 2)) {
+                    console.log("là 3 cạnh của tam giác vuông");
+                } else {
+                    console.log("chỉ là 3 cạnh của tam giác ");
+                }
+
+            }
+
+        } else {
+            console.log("không là cạnh của tam giác");
+        }
+    }
+    check(a, b, c);
+
+</script>
+</body>
+</html>

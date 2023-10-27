@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 'Nguyen', 'Truxc' ,'Vi'
+let input = prompt("Nhap vao day")
+let newArr = input.split(" ");
+console.log(newArr)
+let result =[]
+for (let i =0; i < newArr.length ; i++) {
+    let b = newArr[i].toLowerCase();
+    result.push(b)
+}
+document.write(result.join(' '))
+
+</script>
+</body>
+</html>

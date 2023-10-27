@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function VietTat(string) {
+    let str = string.trim();
+    let arrStr = str.split(" ");
+    if (arrStr.length === 1) {
+      return "chuỗi chỉ có 1 từ nên không cần viết tắt";
+    } else {
+      let newStr = str[0].toUpperCase();
+      for (let i = 1; i < str.length; i++) {
+        if (str[i-1] === " " && str[i] !== " ") {
+          newStr += str[i].toUpperCase();
+        }
+      }
+      return newStr;
+    }
+  }
+
+  console.log(VietTat("hello"))
+  console.log(VietTat("  Toi   Ten  La  Hai  "))
+</script>
+</body>
+</html>

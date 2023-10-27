@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("nhap tu vao: ");
+
+
+
+    function deleteSpace(string){
+        str=string.trim();
+        let arr = str.split("");
+        if(arr.length===1){
+            return "chuổi có 1 từ ";
+        }else {
+            let newStr=str[0].toUpperCase();
+            for (let i = 0; i < str.length; i++) {
+                if(str[i-1]===" "&& str[i]!==" "){
+                    newStr+=str[i].toUpperCase();
+                }
+            }
+            return newStr;
+        }
+
+    }console.log(deleteSpace(str));
+
+</script>
+</body>
+</html>

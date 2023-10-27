@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .center{
+        text-align: center;
+        border-color: darkmagenta;
+
+    }
+</style>
+<body>
+<table bgcolor="#a52a2a">
+    <tr><td class="center" bgcolor="#9acd32">chuyển đổi tiền tệ</td></tr>
+    <tr>
+        <td bgcolor="yellow" >
+            <input type="number" id="a">
+        </td >
+        <td bgcolor="blue"><input type="number" id="b"></td>
+    </tr>
+    <tr>
+        <td>
+            <select id="c">
+            <option value=" ">VND</option>
+                <option>USD</option>
+                <option>JPY</option>
+                <option>RMB</option>
+                <option>GBP</option>
+            </select>
+        </td>
+        <td>
+            <select id="d">
+                <option value=" ">VND</option>
+                <option>USD</option>
+                <option>JPY</option>
+                <option>RMB</option>
+                <option>GBP</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="center" type="submit" onclick="result() " id="result">chuyển đổi</button>
+        </td>
+    </tr>
+    <tr>
+        <td><input class="center" type="number" id="p-result"></td></tr>
+</table>
+<script>
+    function result(){
+        let a=+document.getElementById("a").value;
+        let b=+document.getElementById("b").value;
+        let c=+document.getElementById("c").value;
+        let result=0;
+        if(a===b){
+result=
+        }
+    }
+</script>
+</body>
+</html>

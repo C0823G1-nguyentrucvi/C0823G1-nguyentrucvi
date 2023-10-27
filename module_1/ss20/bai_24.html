@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   let a=+prompt(`do dai mang`);
+   let arr=[];
+   for (let i = 0; i < a; i++) {
+       arr[i]=prompt(`nhap phan tu ${i}`);
+   }
+   let arrD=[];
+   for (let i = 0; i < arr.length/2; i++) {
+     arrD.push(arr[i]);
+   }
+   console.log(arrD);
+   let arrE=[];
+   for (let i = arr.length/2; i <arr.length ; i++) {
+       arrE.push(arr[i]);
+   }
+console.log(arrE)
+
+</script>
+</body>
+</html>

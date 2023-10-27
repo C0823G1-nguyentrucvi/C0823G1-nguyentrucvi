@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tong = +prompt("tổng số buổi của module: ");
+    let nghi = +prompt("tổng số buổi nghỉ: ");
+    let congThuc = nghi / tong
+    if (congThuc * 100 > 10 && congThuc * 100 <= 20) {
+        alert("gửi mail warning");
+    } else if (congThuc * 100 < 10) {
+        alert("oke")
+
+    } else if (congThuc * 100 >= 10 && congThuc * 100 >= 20) {
+        alert("buộc chuyển lớp");
+    }
+</script>
+</body>
+</html>

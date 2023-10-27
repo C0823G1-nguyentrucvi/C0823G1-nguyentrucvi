@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .center {
+        text-align: center;
+
+    }
+
+    .art {
+        padding: 10px;
+        background-color: brown;
+        color: ivory;
+    }
+
+    .borderexample {
+        border: 15px solid brown;
+        border-radius: 15px;
+
+    }
+
+</style>
+<body>
+<table bgcolor="#ffe4c4" class="borderexample">
+    <tr>
+
+        <td style="color: ivory" bgcolor="black" class="center">
+            <h1>TIP CALCULATOR</h1>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>How much was your bill?</p>
+        </td>
+
+    </tr>
+    <tr>
+
+        <td>$<input type="number" id="a"></td>
+
+    </tr>
+    <tr>
+        <td>
+            <p>How was your service?</p>
+        </td>
+
+    </tr>
+    <tr>
+
+
+        <td>
+            <select id="c">
+                <option value=" ">mời bạn chọn</option>
+                <option> 30% - Outstanding</option>
+                <option> 20% - Good</option>
+                <option> 15% - It was OK</option>
+                <option> 10% - BAD</option>
+                <option> 5% - Terrible</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>How many people are sharing the bill?</p>
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <input type="number" id="b"> people
+        </td>
+    </tr>
+    <tr>
+        <td class="center">
+            <button class="art" onclick="bill()" id="result">CALCULATE</button>
+        </td>
+    </tr>
+    <tr>
+
+        <td class="center">
+            <h2>TIP AMOUNT</h2>
+        </td>
+    </tr>
+    <tr>
+
+        <td><h1 class="center" id="p-result">$</h1></td>
+    </tr>
+    <tr>
+
+        <td class="center">each</td>
+    </tr>
+
+
+</table>
+<script>
+    function bill() {
+        let tien = +document.getElementById("a").value;
+        let nguoi = +document.getElementById("b").value;
+        let tram = document.getElementById("c").value;
+        let result;
+console.log(tien);
+        console.log(nguoi);
+        console.log(tram);
+
+        switch (tram) {
+            case "30% - Outstanding":
+                result = tien * 0.3/ nguoi;
+                // document.getElementById("p-result").innerHTML = "result";
+                break;
+            case "20% - Good":
+                result = tien * 0.2/ nguoi;
+                break
+            case "15% - It was OK":
+                result = tien * 0.15/ nguoi;
+                break;
+            case " 10% - BAD":
+                result = tien * 0.1/ nguoi;
+                break;
+            case "5% - Terrible":
+                result = tien * 0.05/ nguoi;
+                break;
+        }
+        document.getElementById("p-result").innerHTML += result;
+    }
+</script>
+</body>
+</html>

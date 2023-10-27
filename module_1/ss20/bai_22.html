@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(Adam, Eva) {
+            this.Adam = Adam;
+            this.Eva = Eva;
+        }
+
+        getAdam() {
+            return this.Adam
+
+        }
+
+        setAdam(Adam) {
+            this.Adam = Adam;
+        }
+
+        getEva() {
+            return this.Eva
+        }
+
+        setEva(Eva) {
+            this.Eva = Eva;
+        }
+
+        monkey() {
+            if (!this.isBanana()) {
+                this.Eva--;
+            } else {
+                alert("hết táo rồi bạn eey!");
+            }
+        }
+
+        isBanana() {
+            return this.Eva <= 0;
+        }
+    }
+
+    class haman {
+        constructor(name, gender, weight, apple) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+            this.apple = apple;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getApple() {
+            return this.apple;
+        }
+
+        setApple(apple) {
+            this.apple = apple;
+        }
+
+        eat() {
+            if (this.apple.isBanana()) {
+                alert("chuối đã hết!")
+            } else {
+                this.apple.monkey();
+                this.weight += this.apple.getAdam();
+            }
+        }
+    }
+
+    let apple = new Apple(2, 10)
+    let TrucDi = new haman("trúc vi", true, 45, apple);
+    let Khi = new haman("khỉ", false, 100, apple);
+    console.log(apple.isBanana())
+    while (apple.isBanana() !== true) {
+        console.log(apple.isBanana())
+        TrucDi.eat(apple)
+        document.write("Trúc vi ăn trái chuối " + "<br>")
+        document.write("Trái chuối còn được :" + apple.getEva() + " " + "trái" + "<br>")
+        document.write("sự mũm mĩm của Trúc vi là: " + " " + TrucDi.getWeight() + " " + "cân" + "<br>")
+        document.write("ăn ít thôi béo phì đấy" + "</br>");
+        Khi.eat(apple)
+        document.write("khỉ ăn trái chuối " + "<br>")
+        document.write("Trái chuối còn được :" + apple.getEva() + " " + "trái" + "<br>")
+        document.write("sự mập mạp  của khỉ là: " + " " + Khi.getWeight() + " " + "cân" + "<br>")
+        document.write("Cảm ơn đã nhắc nhở nhóe." + "</br>");
+    }
+    document.write("Và từ đó trúc vi đã hong còn muốn ăn chuối nữa... " + "</br>");
+    document.write("Còn chú khỉ thì đã đột quỵ vì nghẹn chuối." + "</br>");
+</script>
+</body>
+</html>

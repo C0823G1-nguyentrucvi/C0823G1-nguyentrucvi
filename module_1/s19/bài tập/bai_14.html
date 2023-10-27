@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr2d = +prompt("nhap số lượng:");
+    let arr = [];
+    let b;
+    for (let i = 0; i < arr2d; i++) {
+        do {
+            b = +prompt(`nhap phan tu:${i}`);
+        }while (arr.indexOf(b) !== -1)
+        arr.push(b);
+    }
+    console.log(arr)
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt(`nhap do dai mang `);
+    let arr = [];
+    for (let i = 0; i < a; i++) {
+        arr[i] = +prompt(`nhap phan tu ${i}`)
+
+    }
+    console.log(arr)
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 !== 0) {
+            if (i % 2 === 0) {
+                sum += arr[i]
+            }
+        }
+    }
+    console.log(`tong:${sum}`);
+    let max = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    console.log(`lon nhat: ${max}`)
+
+    function check(arr) {
+        let min = arr[0];
+        let index = 0;
+        for (let i = 1; i < arr.length; i++) {
+            if (min > arr[i]) {
+                min = arr[i];
+                index = i;
+
+
+            }
+        }
+        console.log(`so nho nhat:${min} vi trí so nhỏ nhat ${index}`);
+    }
+
+    check(arr)
+    let newArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (Math.sqrt(arr[i]) % 1 === 0) {
+            newArray.push(arr[i]);
+        }
+
+    }
+    console.log(newArray);
+    let arrS = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 2 && arr[i] % i !== 0) {
+            arrS.push(arr[i])
+        }
+    }
+console.log(arrS)
+</script>
+</body>
+</html>

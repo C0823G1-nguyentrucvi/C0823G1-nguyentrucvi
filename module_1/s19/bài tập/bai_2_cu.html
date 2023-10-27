@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("nhập số phần tử");
+    let b;
+    let arr = [];
+
+    for (let i = 0; i < a; i++) {
+        arr[i] = +prompt(`nhap phan tử thứ ${i}`);
+    }
+    for (let j = 0; j <= arr.length; j++) {
+        if (Math.floor((arr[j]) / 10) % 2 !== 0 || arr[j] % 2 !== 0 ) {
+            console.log(arr[j]);
+            break;
+
+        }
+
+    }
+
+
+</script>
+</body>
+</html>

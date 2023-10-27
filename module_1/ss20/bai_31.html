@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = "Abcdef1234";
+    let b = "Uykhldg1";
+    let count = 0;
+    a = a.split("");
+    b = b.split("");
+    console.log(a)
+    for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < b.length; j++) {
+            if (a[i] === b[j]) {
+                b[j]='-';
+                count++;
+                break;
+            }
+        }
+
+    }
+    console.log(count)
+</script>
+</body>
+</html>

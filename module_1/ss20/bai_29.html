@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt(`nhap so muon tim`);
+    let arr = [];
+    let max = 0;
+    for (let i = 0; i <= a; i++) {
+        if (a % i === 0) {
+            if (i > max) {
+                max = i;
+            }
+        }
+    }
+    let min = 0;
+    for (let i = a; i >= a; i++) {
+        if (i % a === 0) {
+
+                min = i;
+                break;
+
+
+        }
+    }
+    console.log(`boi ${min}`);
+    console.log(`uoc ${max}`);
+</script>
+</body>
+</html>

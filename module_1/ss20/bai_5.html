@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let b = +prompt(`nhap so vao đi`);
+    for (let i = 0; i < b; i++) {
+        arr[i] = +prompt(`nhap phan tư ${i}`);
+    }
+
+    function check(arr) {
+        for (let i = 0; i < arr.length; i=i+2) {
+            if(arr[i] > arr[i + 1]){
+                return false;
+            }
+
+            return true;
+        }
+    }
+
+
+        console.log(check(arr));
+</script>
+</body>
+</html>

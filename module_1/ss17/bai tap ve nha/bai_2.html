@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x1="aabcc";
+    let x2="adcaa";
+
+    let count = 0;
+
+    x1 = x1.split("");
+    x2 = x2.split("");
+
+    for (let i = 0; i < x1.length; i++) {
+        for (let j = 0; j < x2.length; j++) {
+            if (x1[i] === x2[j]) {
+                x2[j] = "-";
+                console.log(x2)
+                count++;
+                break;
+            }
+        }
+    }
+
+    console.log(count)
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let a = prompt("kiểm tra số :");
+
+
+    function findMaxNumber(n) {
+        let arr = n.split("");
+        let result;
+        if (arr.length !== 4) {
+            return -1;
+
+        }else {
+            for (let i = 0; i < arr.length; i++) {
+                if(isNaN(arr[i])){
+                    return -1;
+                }
+            }
+            for (let i = 0; i < arr.length; i++) {
+                if(arr[i]<arr[i+1]){
+                    arr.splice(i,1);
+                    break;
+                }
+            }if(arr.length===4){
+                arr.pop()
+            }
+            let an=arr.join('');
+            result = parseInt(an);
+            return result;
+        }
+    }
+
+
+   alert(findMaxNumber(a));
+
+</script>
+</body>
+</html>

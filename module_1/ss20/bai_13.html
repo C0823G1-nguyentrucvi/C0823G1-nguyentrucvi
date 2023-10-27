@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let numberInArr = +prompt("Nhập số lượng các phần tử trong mảng : ");
+    let numberInArr = 5;
+    let arr = [];
+    for (let i = 0; i < numberInArr; i++) {
+        arr[i] = +prompt("Nhập phần tử thứ " + i + " : ")
+        // arr[i] = 5
+    }
+    console.log(arr)
+    let flag = true;
+    for (let i = 0; i < arr.length; i++) {
+        if (!isPrime(arr[i])) {
+            flag = false;
+            break;
+        }
+    }
+    if (flag) {
+        console.log("OK")
+    } else {
+        console.log("Truc Vi baka")
+    }
+
+    function isPrime(number) {
+        if (number < 2) {
+            return false
+        } else {
+            for (let i = 2; i < number; i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+    // console.log(arr)
+    // let newArray = [];
+    // let count = 0;
+    // for (let i = 0; i <= arr.length; i++) {
+    //     for (let j = 0; j <= arr[i]; j++) {
+    //         if (arr[i] % j === 0) {
+    //             count++;
+    //         }
+    //
+    //     }
+    //     if (count === 2) {
+    //         newArray.push(arr[i]);
+    //     }
+    // }
+    // if (newArray.length === 1){
+    //     console.log(`ok`);
+    // }else {
+    //     console.log(`no`)
+    // }
+    //
+    //     console.log(newArray);
+</script>
+</body>
+</html>

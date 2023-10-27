@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt(`nhap độ dài mảng:`);
+    let arr = [];
+
+    for (let i = 0; i < a; i++) {
+        arr[i] = +prompt(`so phan tư ${i}`);
+
+
+    }
+    let newArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 10 && arr[i] < 100) {
+            newArray.push(arr[i]);
+        }
+    }
+
+    console.log(newArray);
+
+    // [11, 12, 13, 14, 44]
+    function check(arr) {
+        let results = [];
+        for (let i = 0; i < arr.length; i++) {
+            console.log("Vong lap dau: " + arr[i])
+            let str = "" + arr[i]; // 11
+            for (let j = 0; j < str.length; j++) {
+                console.log("So sau khi tach: " + str[j])
+                if (str[j] < str[j + 1]) {
+                    results.push(+str);
+                    console.log("So dung: " + str)
+                }
+            }
+        }
+        console.log(results)
+    }
+
+    // check(newArray);
+    check(newArray);
+</script>
+</body>
+</html>

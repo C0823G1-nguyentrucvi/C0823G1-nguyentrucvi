@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt(`do dai mang`);
+    let arr = [];
+    for (let i = 0; i < a; i++) {
+        arr[i] = +prompt(`nhap phan tu  ${i}`);
+    }
+    console.log(arr);
+
+
+    let count = 0;
+
+    function check(arr) {
+
+        let max = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+
+             if (arr[i] > max) {
+                max = arr[i];
+
+            }else if (arr[i] === max) {
+                 count++;
+             }
+
+        } count+=1;
+
+
+    }
+
+    check(arr)
+    console.log(count);
+
+</script>
+</body>
+</html>

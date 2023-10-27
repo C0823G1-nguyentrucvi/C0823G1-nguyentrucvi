@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Viết 1 hàm truyền vào 1 tham số (với tham số là một mảng 1 chiều), (checkArrray(arr))
+    //"Thực hiện kiểm tra.
+    //"
+    // +Nếu từng phần tử ở vị trí 1/2 mảng  sau có giá trị bằng bình phương từng phần tử đầu thì trả về "true",
+    // "
+    //  + Nếu bất kỳ vị trí nào không đúng điều kiện thì trả  về ""false"""
+    // "+ Ví dụ  checkArray(1,2,3,1,4,9]) => true = (vì 1*1=1 và 2*2=4 và 3*3=9)
+    // "
+    // checkArray([2,1,3,1,1,9]) => false = (vì 2*2=4  khác 1 => sai)
+    // let arr = [1, 2, 3, 1, 4, 9]
+    // j = 0;
+    // let newArr = [];
+    // for (let i = arr.length / 2; i < arr.length; i++) {
+    //     newArr[j] = arr[i];
+    //     j++
+    // }
+    // for (let i = 0; i < arr.length / 2; i++) {
+    //     if (newArr.indexOf(arr[i]) === -1) {
+    //         console.log(false);
+    //     } else {
+    //         console.log(true);
+    //     }
+    // }
+    let a = +prompt('nhập độ dài phần tử ');
+    let arr = [];
+    for (let i = 0; i < a; i++) {
+        arr[i] = +prompt(`phan tư ${i}`);
+    }
+    console.log(arr)
+
+    function checkArray(arr) {
+        let newArr = [];
+        let j = 0;
+        let a = false;
+        let b = false;
+        for (let i = arr.length / 2; i < arr.length; i++) {
+            newArr[j] = arr[i];
+            j++;
+        }
+            for (let k = 0; k < arr.length / 2; k++) {
+                if (newArr.indexOf(arr[k]) === -1) {
+                a=true;
+                } else {
+                  b=true;
+                }
+
+
+        }if(a===true){
+                return false;
+        }else if(b===true){
+                return true;
+        }
+    }
+
+    let result = checkArray(arr);
+    console.log(result);
+</script>
+</body>
+</html>

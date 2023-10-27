@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt(`nhap do dai`);
+    let arr = [];
+    for (let i = 0; i < a; i++) {
+        arr[i] = +prompt(`phan tu ${i}`);
+    }
+    console.log(arr)
+    let sum = 0;
+    let avg = 0;
+    let count = 0
+
+    function check(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] !== -1) {
+                sum += arr[i];
+            }
+        }
+        avg = sum / arr.length;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === avg) {
+                count++;
+            }
+        }
+
+    }
+
+    check(arr);
+    console.log(avg)
+    console.log(count)
+</script>
+</body>
+</html>

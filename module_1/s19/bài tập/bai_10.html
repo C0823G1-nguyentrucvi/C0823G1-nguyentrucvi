@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr2d = +prompt("nhập số lượng phần tử")
+    let arr = [];
+    let count = 0;
+    let count1 = 0;
+    for (let i = 0; i < arr2d; i++) {
+        let b = +prompt(`nhập phần tử ${i}`)
+        arr.push(b);
+    }
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[j] % 2 === 0) {
+                count++;
+
+            } else if (arr[j] % 2 !== 0) {
+                count1++;
+            }
+
+        }if(count===count1){
+            console.log("ok");
+    }else {
+            console.log("no");
+    }
+
+    console.log(arr);
+    console.log(`số phần tử lẻ: ${count1}`);
+    console.log(`so phan tu chan: ${count}`);
+
+
+
+</script>
+</body>
+</html>

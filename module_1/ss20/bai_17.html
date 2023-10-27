@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let a = +prompt(`nhap vao do dai mảng `);
+    for (let i = 0; i < a; i++) {
+        arr[i] = prompt(`nhap phan tu ${i}`);
+    }console.log(arr);
+
+    function checkArray(array) {
+        let a = false;
+        for (let i = 0; i < array.length; i++) {
+            if (isNaN(array[i])) {
+                a = true;
+            } else {
+                a = false;
+            }
+        }
+        if (a === true) {
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    let result = checkArray(arr);
+    console.log(result);
+</script>
+</body>
+</html>

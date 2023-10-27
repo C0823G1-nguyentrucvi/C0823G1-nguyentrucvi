@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [-1, 150, 190, 180, -1, -1, 10];
+    let result = [];
+
+    function Array(a) {
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] === -1) {
+                result.push(i, 1);
+
+            } else {
+                for (let j = 0; j < arr.length; j++) {
+                    if (a[i] < a[j] && a[i] !== -1){
+                        let min=a[i];
+                        a[i]=a[j];
+                        a[j]=min;
+                    }
+
+
+                }
+            }
+        }
+        console.log(a)
+    }
+Array(arr);
+    console.log(result)
+</script>
+</body>
+</html>

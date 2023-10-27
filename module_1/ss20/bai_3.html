@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let b = +prompt("nhap độ dài mảng:");
+    let arr = [];
+    for (let i = 0; i < b; i++) {
+        arr[i] = +prompt(`nhap phan tu ${i}`);
+    }
+    console.log(arr);
+    let a = false;
+    let c = false;
+    let d=false
+    for (let j = 0; j <= arr.length-1; j++) {
+        if (arr[j] < arr[j + 1]) {
+            a = true;
+        } else if (arr[j] > arr[j + 1]) {
+            d = true;
+        } else {
+            c = true;
+        }
+    }
+    if (a === true) {
+        console.log(`ok`);
+    } else if (c === true) {
+        console.log(`no`);
+    }else if(d===true){
+        console.log(`ok`)
+    }
+</script>
+</body>
+</html>

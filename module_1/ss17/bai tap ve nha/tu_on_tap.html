@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [15, 2, 3, 5, 10, 15, 7];
+    console.log(arr);
+    let sum = 0;
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 5 === 0 && i % 3 === 0) {
+            sum += arr[i];
+            count++
+        }
+    }
+    console.log(sum, count)
+    let avg = sum / count;
+    console.log(`Trung binh: ${avg}`)
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = 3;
+    let b = 5;
+    let c = 2;
+    let d = 4;
+    let arr = [a, b, c, d];
+    let arr2d = [];
+    let max = arr[0];
+    let min = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        } else if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length - i - 1; j++) {
+            if (arr[j] < arr[j + 1]) {
+                let temp = arr[j];
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp;
+
+
+            }
+        }
+        arr2d.push(arr[i]);
+
+
+    }
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr2d.length; j++) {
+            if (arr2d[j] > arr2d[j + 1]) {
+                let temp = arr2d[j];
+                arr2d[j] = arr2d[j + 1];
+                arr2d[j + 1] = temp;
+            }
+        }
+    }
+    console.log(arr2d)
+    console.log(arr)
+    console.log(max)
+    console.log(min)
+</script>
+</body>
+</html>

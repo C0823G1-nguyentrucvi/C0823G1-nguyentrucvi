@@ -6,8 +6,32 @@
 </head>
 <body>
 <script>
-    let arr=[1,2,3,4,2,3,4];
-    
+    function Array() {
+        let arr = [1, 2, 3, 4, 2, 3, 4, 1];
+        let newArr = [];
+        let b = true;
+        for (let i = 0; i < arr.length; i++) {
+            let count = 0;
+            for (let j = 0; j < arr.length; j++) {
+                if (arr[i] === arr[j]) {
+                    count++;
+                }
+            }
+            newArr.push(count);
+            console.log(newArr)
+            if (newArr[0] !== count) {
+                b = false;
+            }
+
+        }
+        if (newArr.length === 1) {
+            b = false;
+        }
+        return b;
+    }
+
+    console.log(Array())
+
 </script>
 </body>
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = "abcac";
+    let arr = str.split("");
+    let resultArr = [];
+    console.log(arr)
+    console.log(arr)
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] === arr[j]) {
+                resultArr.push(arr[i]);
+                arr.splice(j, 1);
+                j--;
+            }
+        }
+    }
+    console.log(resultArr)
+
+
+
+</script>
+</body>
+</html>

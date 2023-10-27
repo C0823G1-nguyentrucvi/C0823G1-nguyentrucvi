@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let father = +prompt("nhập old father: ");
+    let children = +prompt("nhập old đứa trẻ: ");
+
+    while (father - children < 25) {
+        father = +prompt("nhap lại old cha: ");
+        children = +prompt("nhap lại old đứa bé: ")
+    }
+    let x = 0;
+    while (!((father + x )/ (children + x) === 2)) {
+        x += 1;
+    }
+    console.log(x);
+</script>
+</body>
+</html>

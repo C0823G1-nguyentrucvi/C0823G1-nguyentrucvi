@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let a = +prompt(`nhap i `);
+    let b = +prompt(`nhap j `)
+
+    let arr = [];
+    for (let i = 0; i < a; i++) {
+        arr[i] = [];
+        for (let j = 0; j < b; j++) {
+            arr[i][j] = +prompt(`nhap mang [${i}][${j}]`);
+
+        }
+    }
+    console.log(arr);
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i][i];
+        sum += arr[i][arr.length - 1 - i];
+    }
+    console.log(sum);
+</script>
+</body>
+</html>
