@@ -6,24 +6,32 @@
 </head>
 <body>
 <script>
-    debugger
-    //nguyen truc vi
-    let ten = prompt(`nhap tên bạn`);
-    console.log(ten);
-    let rong = " ";
-    ten.toString();
-    let hoa;
-    let arr = [];
-    for (let i = 0; i < ten.length; i++) {
-        if (ten[i] === rong || ten[i] !== rong) {
-            if (ten[i + 1] !== ten[i]) {
-                hoa = ten[i].toUpperCase();
+
+    let str = "nGuyEn trUc Vi Ok";
+
+    let result = [];
+    let b = " ";
+    let max = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] !== " ") {
+            if (b === " ") {
+                b += str[i].toUpperCase();
+            } else {
+                b += str[i].toLowerCase();
+            }
+        }else {
+            if (b.trim() !== " ") {
+                result.push(b);
+                if (max < b.length) {
+                    max = b.length;
+                }
+                b = " ";
             }
         }
-
-
     }
-    console.log(hoa);
+    console.log(result.join(" "))
+    console.log(max)
+    
 </script>
 </body>
 </html>

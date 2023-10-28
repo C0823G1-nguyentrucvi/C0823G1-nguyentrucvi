@@ -6,28 +6,16 @@
 </head>
 <body>
 <script>
-
-
-    //let count=0;
-
-
     function TimSoNguyenTo(arr) {
         let array = [];
-
-
         for (let i = 0; i < arr.length; i++) {
-
-
             for (let j = 0; j < arr[i].length; j++) {
-
                 if (KiemTraSo(arr[i][j])) {
                     array.push(arr[i][j]);
 
 
                 }
             }
-
-
         }
         return array;
     }
@@ -52,7 +40,6 @@
         }
 
     }
-
 
     console.log(TimSoNguyenTo(arr))
     console.log("số nguyên tố là : " + TimSoNguyenTo(arr).length)
