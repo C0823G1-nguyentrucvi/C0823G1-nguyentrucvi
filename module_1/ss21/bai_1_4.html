@@ -7,20 +7,23 @@
 <body>
 <script>
     debugger
+    //nguyen truc vi
     let ten = prompt(`nhap tên bạn`);
     console.log(ten);
     let rong = " ";
+    ten.toString();
     let hoa;
     let arr = [];
     for (let i = 0; i < ten.length; i++) {
-        if (ten[i + 1] !== rong) {
-            if (ten[i] === " " || ten[i] !== ten[i + 1]) {
+        if (ten[i] === rong || ten[i] !== rong) {
+            if (ten[i + 1] !== ten[i]) {
                 hoa = ten[i].toUpperCase();
-                arr.push(hoa);
             }
         }
 
+
     }
+    console.log(hoa);
 </script>
 </body>
 </html>
