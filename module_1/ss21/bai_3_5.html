@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt(`nhap i`);
+    let b = +prompt(`nhap j`);
+    let arr = [];
+
+    for (let i = 0; i < a; i++) {
+        arr[i] = [];
+        for (let j = 0; j < b; j++) {
+            arr[i][j] = +prompt(`nhap [${i}][${j}]`);
+        }
+    }console.log(arr)
+
+
+
+    function check(check) {
+        let max = check[0][0];
+        let min = check[0][0];
+        for (let i = 0; i < check.length; i++) {
+            for (let j = 0; j < check[i].length; j++) {
+                if (check[i][j] > max) {
+                max = check[i][j];
+            }else if(check[i][j]<min){
+                min=check[i][j];
+            }
+
+        }
+    }console.log(max);
+        console.log(min);
+
+    }
+
+    check(arr)
+</script>
+</body>
+</html>

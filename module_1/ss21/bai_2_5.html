@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt(`nhap i`);
+    let b = +prompt(`nhap j`);
+    let arr = [];
+    for (let i = 0; i < a; i++) {
+        arr[i] = [];
+        for (let j = 0; j < b; j++) {
+            arr[i][j] = +prompt(`nhap [${i}][${j}]`);
+
+        }
+    }
+
+    function checkSo(check) {
+        let count = 0;
+        for (let i = 0; i <= check; i++) {
+            if (check % i === 0) {
+                count++;
+            }
+
+        }
+        if (count === 2) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+
+    function checkSoNguyen(arr) {
+        let arrAy = [];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (checkSo(arr[i][j])) {
+                    arrAy.push(arr[i][j])
+                }
+
+            }
+        }
+        return arrAy;
+    }
+
+    console.log(checkSoNguyen(arr));
+    console.log(`so nguyen to ${checkSoNguyen(arr).length}`);
+</script>
+</body>
+</html>
