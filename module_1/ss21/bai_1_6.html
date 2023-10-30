@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <label>
+        <button onclick="moreStudents()">thêm học viên</button>
+        <button onclick="editStudents()">chỉnh sửa học viên</button>
+        <button>xóa học viên</button>
+    </label>
+</div>
+<table border="1" cellspacing="0.1px" cellpadding="20px">
+    <tr><td>mã học vien</td>
+        <td>tên học viên</td>
+        <td>lớp</td>
+        <td>email</td>
+        <td>ngày sinh</td>
+        <td>modules</td>
+    </tr>
+    <thead></thead>
+    <tbody id="root"></tbody>
+</table>
+<script>
+    class manage {
+        constructor(studentCode, name, classS, email, date, modules) {
+            this.studentCode = studentCode;
+            this.name = name;
+            this.classS = classS;
+            this.email = email;
+            this.date = date;
+            this.modules = modules;
+        }
+
+        getStudentCode() {
+            return this.studentCode;
+        }
+
+        setStudentCode(studentCode) {
+            this.studentCode = studentCode;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getClassS() {
+            return this.classS;
+        }
+
+        setClassS(classS) {
+            this.classS = classS;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        getDate() {
+            return this.date;
+        }
+
+        setDate(date) {
+            this.date = date;
+        }
+
+        getModules() {
+            return this.modules;
+        }
+
+        setModules(modules) {
+            this.modules = modules;
+        }
+    }
+
+    let ngaoTrucVi = new manage(
+        `1`,
+        `Nguyen Truc Vi`,
+        `1`,
+        `abc@gmail.com`,
+        `1/1/2023`,
+        `MouDul1`);
+    let tranThiHongTham = new manage(
+        `2`,
+        `Tran Thi Hong Tham`,
+        `1`,
+        `abc@gmail.com`,
+        `1/1/2023`,
+        `MouDul1`);
+    let leDangPhap = new manage(
+        `3`,
+        `Tran Thi Hong Tham`,
+        `1`,
+        `abc@gmail.com`,
+        `1/1/2023`,
+        `MouDul1`);
+    let studentList = [ngaoTrucVi, tranThiHongTham, leDangPhap];
+    function moreStudents() {
+
+        let getStudentCode = prompt(`nhap mã học viên`);
+        let getName = prompt(`nhap tên học viên`);
+        let getClassS = prompt(`nhap lớp `);
+        let getEmail = prompt(`nhap email`);
+        let getDate = prompt(`nhap ngày sinh`);
+        let getModules = prompt(`nhap modules`);
+    document.getElementById("root").innerHTML+= `<table><tr>
+<td>${getStudentCode}</td>
+<td>${getName}</td>
+<td>${getClassS}</td>
+<td>${getEmail}</td>
+<td>${getDate}</td>
+<td>${getModules}</td>
+</tr></table>`;
+    }
+    function editStudents() {
+        let getStudentCode=prompt(`nhap mã học viên cần chỉnh sửa`);
+    }
+
+</script>
+</body>
+</html>
