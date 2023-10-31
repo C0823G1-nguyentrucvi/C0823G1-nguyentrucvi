@@ -1,131 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Title</title>
 </head>
 <body>
 <div>
     <label>
-        <button onclick="moreStudents()">thêm học viên</button>
-        <button onclick="editStudents()">chỉnh sửa học viên</button>
-        <button>xóa học viên</button>
+        <button onclick="addNewStudent()">Thêm học viên</button>
+        <button onclick="editStudent()">Chỉnh sửa học viên</button>
+        <button onclick="deleteStudent()">Xóa học viên</button>
     </label>
 </div>
 <table border="1" cellspacing="0.1px" cellpadding="20px">
-    <tr><td>mã học vien</td>
-        <td>tên học viên</td>
-        <td>lớp</td>
-        <td>email</td>
-        <td>ngày sinh</td>
-        <td>modules</td>
+    <thead>
+    <tr>
+        <th>Mã học viên</th>
+        <th>Tên học viên</th>
+        <th>Lớp</th>
+        <th>Email</th>
+        <th>Ngày sinh</th>
+        <th>Module</th>
     </tr>
-    <thead></thead>
+    </thead>
     <tbody id="root"></tbody>
 </table>
 <script>
-    class manage {
-        constructor(studentCode, name, classS, email, date, modules) {
+    class Student {
+        constructor(studentCode, name, classS, email, date, module) {
             this.studentCode = studentCode;
             this.name = name;
             this.classS = classS;
             this.email = email;
             this.date = date;
-            this.modules = modules;
+            this.module = module;
         }
-
         getStudentCode() {
             return this.studentCode;
         }
-
         setStudentCode(studentCode) {
             this.studentCode = studentCode;
         }
-
         getName() {
             return this.name;
         }
-
         setName(name) {
             this.name = name;
         }
-
         getClassS() {
             return this.classS;
         }
-
         setClassS(classS) {
             this.classS = classS;
         }
-
         getEmail() {
             return this.email;
         }
-
         setEmail(email) {
             this.email = email;
         }
-
         getDate() {
             return this.date;
         }
-
         setDate(date) {
             this.date = date;
         }
-
-        getModules() {
-            return this.modules;
+        getModule() {
+            return this.module;
         }
-
-        setModules(modules) {
-            this.modules = modules;
+        setModule(module) {
+            this.module = module;
         }
     }
-
-    let ngaoTrucVi = new manage(
+    let ngaoTrucVi = new Student(
         `1`,
         `Nguyen Truc Vi`,
         `1`,
         `abc@gmail.com`,
         `1/1/2023`,
-        `MouDul1`);
-    let tranThiHongTham = new manage(
+        `MouDul1`
+    );
+    let tranThiHongTham = new Student(
         `2`,
         `Tran Thi Hong Tham`,
         `1`,
         `abc@gmail.com`,
         `1/1/2023`,
-        `MouDul1`);
-    let leDangPhap = new manage(
+        `MouDul1`
+    );
+    let leDangPhap = new Student(
         `3`,
         `Tran Thi Hong Tham`,
         `1`,
         `abc@gmail.com`,
         `1/1/2023`,
-        `MouDul1`);
+        `MouDul1`
+    );
     let studentList = [ngaoTrucVi, tranThiHongTham, leDangPhap];
-    function moreStudents() {
-
-        let getStudentCode = prompt(`nhap mã học viên`);
-        let getName = prompt(`nhap tên học viên`);
-        let getClassS = prompt(`nhap lớp `);
-        let getEmail = prompt(`nhap email`);
-        let getDate = prompt(`nhap ngày sinh`);
-        let getModules = prompt(`nhap modules`);
-    document.getElementById("root").innerHTML+= `<table><tr>
-<td>${getStudentCode}</td>
-<td>${getName}</td>
-<td>${getClassS}</td>
-<td>${getEmail}</td>
-<td>${getDate}</td>
-<td>${getModules}</td>
-</tr></table>`;
+    // Hàm hiển thị sinh viên
+    function displayStudentList() {
+        let studentData = "";
+        for (let i = 0; i < studentList.length; i++) {
+            const student = studentList[i];
+            studentData += `<tr>
+                <td>${student.getStudentCode()}</td>
+                <td>${student.getName()}</td>
+                <td>${student.getClassS()}</td>
+                <td>${student.getEmail()}</td>
+                <td>${student.getDate()}</td>
+                <td>${student.getModule()}</td>
+            </tr>`;
+        }
+        document.getElementById("root").innerHTML = studentData;
     }
-    function editStudents() {
-        let getStudentCode=prompt(`nhap mã học viên cần chỉnh sửa`);
+    //Gọi hàm hiển thị
+    displayStudentList();
+    //Hàm thêm mới sinh viên
+    function addNewStudent() {
+        let studentCode = prompt(`Nhập mã học viên: `);
+        let name = prompt(`Nhập tên học viên: `);
+        let className = prompt(`Nhập lớp: `);
+        let gmail = prompt(`Nhập email: `);
+        let date = prompt(`Nhập ngày sinh: `);
+        let module = prompt(`Nhập module: `);
+        const student = new Student(
+            studentCode,
+            name,
+            className,
+            gmail,
+            date,
+            module
+        );
+        studentList.push(student);
+        //Sau khi thêm mới thì gọi lại hàm này để hiển thị lại danh sách
+        displayStudentList();
     }
+    function editStudent() {
+        const studentCode = prompt(`Nhập mã sinh viên: `);
+        //Hàm some để kiểm tra xem mã sinh viên có tồn tại trong danh sách sinh viên hay không? nếu có trả về vị trí của nó trong danh sách ngược lại thì trả về -1
+        const index = studentList.findIndex((student) => student.getStudentCode() === studentCode);
 
+        if (index !== -1) {
+            let name = prompt(`Nhập tên học viên: `);
+            let className = prompt(`Nhập lớp: `);
+            let gmail = prompt(`Nhập email: `);
+            let date = prompt(`Nhập ngày sinh: `);
+            let module = prompt(`Nhập module: `);
+            studentList[index].setName(name);
+            studentList[index].setClassS(className);
+            studentList[index].setEmail(gmail);
+            studentList[index].setDate(date);
+            studentList[index].setModule(module);
+            //Sau khi thêm mới thì gọi lại hàm này để hiển thị lại danh sách
+            displayStudentList();
+            alert("Cập nhật thành công!");
+        } else {
+            alert("Mã sinh viên không tồn tại!");
+        }
+    }
+    //Hàm xóa sinh viên
+    function deleteStudent() {
+        const studentCode = prompt(`Nhập mã sinh viên: `);
+        //Hàm findIndex để kiểm tra xem mã sinh viên có tồn tại trong danh sách sinh viên hay không? nếu có trả về vị trí của nó trong danh sách ngược lại thì trả về -1
+
+        // const index = studentList.findIndex((student) => student.getStudentCode() === studentCode);
+
+        let index = -1;
+        for (let i = 0; i < studentList.length; i++) {
+            if (studentList[i].getStudentCode() === studentCode) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index !== -1) {
+            const confirmDelete = confirm(`Bạn có muốn xóa sinh viên ${studentList[index].getName()} không?`);
+            if (confirmDelete) {
+                studentList.splice(index, 1);
+                //Sau khi thêm mới thì gọi lại hàm này để hiển thị lại danh sách
+                displayStudentList();
+            }
+        } else {
+            alert("Mã sinh viên không tồn tại!");
+        }
+    }
 </script>
 </body>
 </html>
