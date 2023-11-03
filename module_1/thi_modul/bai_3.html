@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let a = "eacabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbe";
+
+    function check(str) {
+        let arr = [];
+        str = str.split("");
+        console.log(str);
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] === str[i + 1] || str[i] === str[i + 3] || str[i] === str[i + i] ) {
+                arr.push(str[i]);
+            }
+        }
+        console.log(` các phần tử xuất hiện nhiều hơn 2 lần ${arr}`);
+    }
+
+    check(a);
+</script>
+</body>
+</html>

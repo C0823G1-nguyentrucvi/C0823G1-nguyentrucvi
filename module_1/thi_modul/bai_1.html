@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let a;
+    do {
+        a = +prompt(`nhap so nguyen duong n`);
+    } while (a > 500)
+    for (let i = 0; i <= a; i++) {
+        if (a % i === 0) {
+            arr.push(i);
+        }
+    }
+    document.write(` ước của ${a} là :${arr}`);
+    let newArr = [];
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 !== 0) {
+            sum += arr[i];
+            newArr.push(arr[i]);
+
+        }
+    }
+    document.write(` tổng các số lẻ là :${sum}`);
+    document.write(` các ước số lẻ là : ${newArr}`);
+</script>
+</body>
+</html>

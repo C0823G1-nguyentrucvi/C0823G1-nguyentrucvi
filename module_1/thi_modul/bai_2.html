@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a;
+    do {
+        a = +prompt(`nhap độ dài mảng`);
+    } while (a > 100);
+    let arr = [];
+    for (let i = 0; i < a; i++) {
+        arr[i] = +prompt(`nhap phần tử vào mảng ${i}`);
+    }
+    document.write(` phần tử đã thêm vào mảng ${arr}`);
+    let newArr = [];
+    let sum = 0;
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        count = 0;
+        for (let j = 2; j < arr[i]; j++) {
+            if (arr[i] % j !== 0) {
+                count++;
+            }
+        }
+        if (count === 2){
+            newArr.push(arr[i]);
+        }
+    }
+    document.write(`cac phan tu nguyen to : ${newArr}`);
+    document.write(`tong các số nguyên tố có trong mảng ${sum}`);
+</script>
+</body>
+</html>
