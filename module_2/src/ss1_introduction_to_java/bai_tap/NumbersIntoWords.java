@@ -14,11 +14,17 @@ public class NumbersIntoWords {
         } else if (number > 13 && number < 20) {
             System.out.printf("%s teen", array1[number - 10]);
         } else if (number >= 20 && number < 100) {
-            System.out.printf("%s ty", array1[number / 10]);
+            if (number % 10 == 0) {
+                System.out.printf("%s ty", array1[number / 10]);
+            } else {
+                System.out.printf("%s ty %s", array1[number / 10], array1[number % 10]);
+            }
         } else if (number >= 100 && number < 1000) {
-            System.out.printf("%s hundred", array1[number / 100]);
-        } else if (number > 20 && number <= 99) {
-            System.out.printf("%s ty ");
+            if (number % 100 == 0) {
+                System.out.printf("%s hundred", array1[number / 100]);
+            } else {
+                System.out.printf("%s hundred %s ty %s", array1[number / 100], array1[(number % 100) / 10], array1[((number % 100) % 10)]);
+            }
         }
     }
 }
