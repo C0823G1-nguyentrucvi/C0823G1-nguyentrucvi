@@ -22,6 +22,7 @@ public class Image {
                         }
                         System.out.println();
                     }
+                    break;
                 case 2:
                     for (int i = 0; i < 5; i++) {
                         for (int j = 0; j < 5; j++) {
@@ -44,9 +45,9 @@ public class Image {
                         System.out.println();
 
                     }
-                    for (int i = 0; i < 5; i++) {
+                    for (int i = 5; i > 0; i--) {
                         for (int j = 0; j < 5; j++) {
-                            if (i <= j) {
+                            if (i < j) {
                                 System.out.print("*");
                             } else {
                                 System.out.print(" ");
@@ -65,6 +66,7 @@ public class Image {
                         System.out.println();
 
                     }
+                    break;
             }
         }
     }
