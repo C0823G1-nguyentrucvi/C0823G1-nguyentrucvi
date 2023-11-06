@@ -23,7 +23,7 @@ public class NumbersIntoWords {
             if (number % 100 == 0) {
                 System.out.printf("%s hundred", array1[number / 100]);
             } else {
-                System.out.printf("%s hundred %s ty %s", array1[number / 100], array1[(number % 100) / 10], array1[((number % 100) % 10)]);
+                System.out.printf("%s hundred and %s ty %s", array1[number / 100], array1[(number % 100) / 10], array1[((number % 100) % 10)]);
             }
         }
     }
