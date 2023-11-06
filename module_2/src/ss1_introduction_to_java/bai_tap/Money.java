@@ -6,8 +6,8 @@ public class Money {
     public static void main(String[] args) {
         Scanner money = new Scanner(System.in);
         System.out.println("Enter the amount: ");
-        float USD = money.nextFloat();
-        float VND=23000*USD;
-        System.out.println(USD+ "đổi sang vnd:"+VND);
+        float usd = money.nextFloat();
+        float vnd=23000*usd;
+        System.out.println(usd+ "đổi sang vnd:"+vnd);
     }
 }
