@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class FirstString {
     public static int indexOf(String str,String kt){
         int count=0;
+        int temp=kt.charAt(0);
         for (int i = 0; i < str.length(); i++) {
-            if(kt.charAt(0) == str.charAt(i)){
+            if(temp == str.charAt(i)){
                 count++;
             }
 

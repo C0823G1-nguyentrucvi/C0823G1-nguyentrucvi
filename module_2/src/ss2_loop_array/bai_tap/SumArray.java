@@ -4,18 +4,13 @@ import java.util.Scanner;
 
 public class SumArray {
     public static int sum(int[][] arr) {
-        Scanner now=new Scanner(System.in);
+        Scanner now = new Scanner(System.in);
         int sum = 0;
         System.out.println("nhập cột muốn tính tổng");
-        int rn=now.nextInt();
+        int runNow = now.nextInt();
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                if (rn == j) {
-                    sum+=arr[i][j];
+            sum += arr[i][runNow];
 
-
-                }
-            }
 
         }
         return sum;
@@ -34,6 +29,6 @@ public class SumArray {
             }
 
         }
-        System.out.print("tổng"+sum(arr));
+        System.out.print("tổng" + sum(arr));
     }
 }
