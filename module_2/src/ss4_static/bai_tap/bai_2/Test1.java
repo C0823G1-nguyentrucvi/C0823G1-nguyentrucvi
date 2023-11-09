@@ -1,4 +1,6 @@
-package ss4_static.bai_tap;
+package ss4_static.bai_tap.bai_2;
+
+import ss4_static.bai_tap.bai_2.Student;
 
 public class Test1 {
     public static void main(String[] args){

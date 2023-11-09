@@ -1,4 +1,4 @@
-package ss4_static.bai_tap;
+package ss4_static.bai_tap.bai_1;
 
 import java.awt.geom.Area;
 

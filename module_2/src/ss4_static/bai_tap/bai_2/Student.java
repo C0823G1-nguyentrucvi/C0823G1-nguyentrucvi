@@ -1,4 +1,4 @@
-package ss4_static.bai_tap;
+package ss4_static.bai_tap.bai_2;
 
 public class Student {
     private String name;

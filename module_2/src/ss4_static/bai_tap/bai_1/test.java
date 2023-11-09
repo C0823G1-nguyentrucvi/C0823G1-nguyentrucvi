@@ -1,6 +1,6 @@
-package ss4_static.bai_tap;
+package ss4_static.bai_tap.bai_1;
 
-import java.util.Scanner;
+import ss4_static.bai_tap.bai_1.Circle;
 
 public class test {
     public static void main(String[] args){
