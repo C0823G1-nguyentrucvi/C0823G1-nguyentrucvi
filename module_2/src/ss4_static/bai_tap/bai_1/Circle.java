@@ -14,24 +14,20 @@ public class Circle  {
         return radius;
     }
 
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
+
 
     public String getColor() {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
+
     public double getArea(){
         return PI*radius*radius;
     }
 
    public Circle(){
-        this.setRadius(1.0);
-        this.setColor("red");
+        this.radius=1.0;
+        this.color="red";
    }public Circle(double radius){
         this.radius=radius;
 
