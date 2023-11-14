@@ -21,8 +21,7 @@ public class Management {
             }
             if (array[i] instanceof Rectangle) {
                 Rectangle rectangle = (Rectangle) array[i];
-                rectangle.setWidth(rectangle.getWidth()*(1+b/100));
-            rectangle.setLength(rectangle.getLength()*(1+b/100));
+                rectangle.getArea();
             }
 
         } System.out.println(b);

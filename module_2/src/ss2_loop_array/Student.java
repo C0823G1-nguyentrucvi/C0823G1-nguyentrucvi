@@ -1,6 +1,9 @@
 package ss2_loop_array;
 import java.util.Scanner;
 public class Student {
+    public Student(int i, String nguyenVanA, double v) {
+    }
+
     public static void main(String[] args) {
         String[] students = {"Christian", "Michael", "Camila", "Sienna", "Tanya", "Connor", "Zachariah", "Mallory", "Zoe", "Emily"};
         Scanner scanner = new Scanner(System.in);
