@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class MyList<E> {
     private int size = 0;
     public int capacity;
-    private static final int DEFAULT_CAPACITY = 10;
-    Object[] elements;
+    static final int DEFAULT_CAPACITY = 10;
+    public Object[] elements;
 
     public MyList() {
         elements = new Object[DEFAULT_CAPACITY];
@@ -16,21 +16,24 @@ public class MyList<E> {
     public MyList(int capacity) {
         if (capacity >= 0) {
             elements = new Object[capacity];
-        }else {
-            throw new IllegalArgumentException("capacity:"+capacity);
+        } else {
+            throw new IllegalArgumentException("capacity:" + capacity);
         }
     }
 
-    int Size(){
+    public int Size() {
         return this.size;
-    }private  void clear(){
-        size=0;
+    }
+
+    public void clear() {
+        size = 0;
         for (int i = 0; i < elements.length; i++) {
-            elements[i]=null;
+            elements[i] = null;
         }
     }
-    public boolean add(E elements)  {
-        if(elements.length==size){
+
+    public boolean add(E element) {
+        if (elements.length == size) {
             this.ensureCapacity(5);
         }
         elements[size] = elements;
@@ -38,30 +41,32 @@ public class MyList<E> {
         return true;
     }
 
-    void add(E element, int index){
-        if (index>element.lenght){
-        throw new IllegalArgumentException("index"+index);
-    }else if(element.length==size){
+    void add(E element, int index) {
+        if (index > elements.length) {
+            throw new IllegalArgumentException("index" + index);
+        } else if (elements.length == size) {
             this.ensureCapacity(5);
-        }if(element[index]==null){
-            elements[index]=element;
+        }
+        if (elements[index] == null) {
+            elements[index] = element;
             size++;
-        }else {
+        } else {
             for (int i = 0; i >= index; i--) {
-                elements[i]=element[i-1]
+                elements[i] = elements[i - 1];
             }
-            elements[index]=element;
+            elements[index] = element;
             size++;
         }
 
 
     }
-    private void ensureCapacity(int minCapacity){
-        if(minCapacity>=0){
-            int newSize= this.elements.length+minCapacity;
-            elements=Arrays.copyOf(elements,newSize);
-        }else {
-            throw new IllegalArgumentException("mincapacity"+minCapacity);
+
+    public void ensureCapacity(int minCapacity) {
+        if (minCapacity >= 0) {
+            int newSize = this.elements.length + minCapacity;
+            elements = Arrays.copyOf(elements, newSize);
+        } else {
+            throw new IllegalArgumentException("mincapacity" + minCapacity);
         }
     }
 
