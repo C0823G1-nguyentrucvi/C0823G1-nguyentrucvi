@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class MyList<E> {
     private int size = 0;
-    public int capacity;
+
     static final int DEFAULT_CAPACITY = 10;
-    public Object[] elements;
+    private Object[] elements;
 
     public MyList() {
         elements = new Object[DEFAULT_CAPACITY];
@@ -41,7 +41,7 @@ public class MyList<E> {
         return true;
     }
 
-    void add(E element, int index) {
+    public void add(E element, int index) {
         if (index > elements.length) {
             throw new IllegalArgumentException("index" + index);
         } else if (elements.length == size) {
