@@ -3,7 +3,7 @@ package ss7_mvc.repository;
 import ss2_loop_array.Student;
 
 public class StudentRepositoryImpl implements StudentRepository {
-    private static Student[] studentList;
+    private static final Student[] studentList;
     private static int size = 0;
 
     static {
@@ -17,9 +17,8 @@ public class StudentRepositoryImpl implements StudentRepository {
     @Override
     public Student[] findAll() {
         Student[] students=new Student[size];
-        for (int i=0; i<size;i++){
-            students[i]=studentList[i];
-        }return students;
+        System.arraycopy(studentList, 0, students, 0, size);
+        return students;
     }
 
     @Override

@@ -2,14 +2,13 @@ package ss10_Java_Collection_Framework.controller;
 
 import ss10_Java_Collection_Framework.model.Product;
 import ss10_Java_Collection_Framework.sevice.IProductService;
-import ss10_Java_Collection_Framework.sevice.IProductService;
 import ss10_Java_Collection_Framework.sevice.ProductService;
 
 import java.util.List;
 
 public class ProductController {
 private final IProductService iProductService= (IProductService) new ProductService();
-public void addProduct(Product product){
+public void addProduct(ProductController product){
     iProductService.save(product);
 }
 

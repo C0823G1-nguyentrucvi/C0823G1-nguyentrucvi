@@ -7,7 +7,7 @@ import ss7_mvc.service.StudentServiceImpl;
 import java.util.Scanner;
 
 public class StudentController {
-    private static StudentService service =new StudentServiceImpl();
+    private static final StudentService service =new StudentServiceImpl();
     public  static void  main(String[] args){
         Scanner scanner=new Scanner(System.in);
         int select=0;

@@ -5,8 +5,8 @@ public class Product {
     private String name;
     private Long salary;
 
-    public Product(String id, String name, double salary) {
-        this.id = Integer.parseInt(id);
+    public Product(int id, String name, double salary) {
+        this.id = Integer.parseInt(String.valueOf(id));
         this.name = name;
         this.salary = (long) salary;
     }
@@ -43,4 +43,5 @@ public class Product {
                 ", salary=" + salary +
                 '}';
     }
+
 }

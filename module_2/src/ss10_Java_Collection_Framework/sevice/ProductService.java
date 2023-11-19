@@ -1,5 +1,6 @@
 package ss10_Java_Collection_Framework.sevice;
 
+import ss10_Java_Collection_Framework.controller.ProductController;
 import ss10_Java_Collection_Framework.model.Product;
 
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 public class ProductService implements IProductService {
 
     @Override
-    public void save(Product product) {
+    public void save(ProductController product) {
 
     }
 
