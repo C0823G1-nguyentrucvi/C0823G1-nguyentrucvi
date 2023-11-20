@@ -24,13 +24,17 @@ public class ProductView {
             switch (choice) {
                 case 1:
                     ProductController product = inputInfoProduct();
-                      productController.addProduct(product);
+                     productController.addProduct(product);
                     System.out.println("thêm mới thành công");
                     break;
                 case 4:
                     List<Product> products = productController.getAll();
-                    for (Product temp : products) {
-                        System.out.println(temp);
+                    if (products.isEmpty()) {
+                        System.out.println("Khng có gì trong này!");
+                    } else {
+                        for (Product temp : products) {
+                            System.out.println(temp);
+                        }
                     }
                     break;
                 case 3:
@@ -51,7 +55,7 @@ public class ProductView {
                     }
             }
 
-        }while (choice != 0) ;
+        } while (choice != 0);
         {
             System.out.println("nhập mã sản phẩm: ");
             int id = Integer.parseInt(scanner.nextLine());
@@ -66,7 +70,6 @@ public class ProductView {
     private ProductController inputInfoProduct() {
         return productController;
     }
-
 
 
 }

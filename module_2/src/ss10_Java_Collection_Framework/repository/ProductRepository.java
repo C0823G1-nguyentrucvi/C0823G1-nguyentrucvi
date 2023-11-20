@@ -6,7 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductRepository implements IProductRepository {
-    private static final List<Product> products = new ArrayList<>();
+    private static List<Product> products = new ArrayList<>();
+    static {
+        products.add(new Product(1,"Iphone",230000));
+        products.add(new Product(2,"SamSung",20000));
+    }
 
     @Override
     public void save(Product product) {
@@ -27,10 +31,7 @@ public class ProductRepository implements IProductRepository {
     public void remove(String code) {
 
     }
-
-
-
-        }
+}
 
 
 
