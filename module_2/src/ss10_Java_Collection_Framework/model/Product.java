@@ -1,21 +1,33 @@
 package ss10_Java_Collection_Framework.model;
 
-public class Product {
-    private int id;
-    private String name;
-    private Long salary;
+import ss10_Java_Collection_Framework.controller.ProductController;
+import ss10_Java_Collection_Framework.sevice.ProductService;
 
-    public Product(int id, String name, double salary) {
-        this.id = Integer.parseInt(String.valueOf(id));
-        this.name = name;
-        this.salary = (long) salary;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Product {
+    private String id;
+    private String name;
+    private Double price;
+
+    public Product() {
+
     }
 
-    public int getId() {
+    public Product(String id, String name, Double price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+
+
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -27,21 +39,23 @@ public class Product {
         this.name = name;
     }
 
-    public double getSalary() {
-        return salary;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setSalary(Long salary) {
-        this.salary = salary;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", salary=" + salary +
+                ", price=" + price +
                 '}';
     }
+
+
 
 }

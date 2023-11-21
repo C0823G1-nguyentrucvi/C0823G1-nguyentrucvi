@@ -8,12 +8,11 @@ import java.util.List;
 public interface IProductService {
 
 
-    void save(ProductController product);
+    void save(Product product);
 
     List<Product> findAll();
 
-    Product findByCode(String code);
+    Product findById(String id);
 
-    void remove(String code);
-
+    void remove(String id);
 }

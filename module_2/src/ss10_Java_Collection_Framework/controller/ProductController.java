@@ -7,21 +7,24 @@ import ss10_Java_Collection_Framework.sevice.ProductService;
 import java.util.List;
 
 public class ProductController {
-    private final IProductService iProductService = new ProductService();
+    private IProductService productService = new ProductService();
 
-    public void addProduct(ProductController product) {
-        iProductService.save(product);
+    public void addProduct(Product product) {
+        productService.save(product);
     }
+
 
     public List<Product> getAll() {
-        return iProductService.findAll();
+        return productService.findAll();
     }
 
-    public Product findByCode(String code) {
-        return iProductService.findByCode(code);
+    public Product findById(String id) {
+        return productService.findById(id);
     }
 
-    public void remove(String code) {
-        iProductService.remove(code);
+    public void remove(String id) {
+        productService.remove(id);
     }
 }
+
+

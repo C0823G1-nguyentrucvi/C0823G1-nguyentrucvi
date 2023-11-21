@@ -6,10 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductRepository implements IProductRepository {
-    private static List<Product> products = new ArrayList<>();
-    static {
-        products.add(new Product(1,"Iphone",230000));
-        products.add(new Product(2,"SamSung",20000));
+    private List<Product> products = new ArrayList<>();
+
+
+    @Override
+    public List<Product> findAll() {
+        return products;
     }
 
     @Override
@@ -18,19 +20,25 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public List<Product> findAll() {
-        return products;
-    }
-
-    @Override
-    public Product findByCode(String code) {
+    public Product findById(String id) {
+        for (Product product : products) {
+            if (product.getId().equals(id)) {
+                return product;
+            }
+        }
         return null;
     }
 
     @Override
-    public void remove(String code) {
-
+    public void remove(String id) {
+        for (Product product: products){
+            if(product.getId().equals(id)){
+                products.remove(product);
+                break;
+            }
+        }
     }
+
 }
 
 
