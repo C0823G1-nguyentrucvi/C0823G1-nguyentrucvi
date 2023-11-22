@@ -14,7 +14,7 @@ public class insert {
                 pos--;
             }
             array[pos]=x;
-            System.out.println("vị trí"+i+Arrays.toString(array));
+            System.out.println("lần thứ "+i+Arrays.toString(array));
         }
         System.out.println(Arrays.toString(array));
     }

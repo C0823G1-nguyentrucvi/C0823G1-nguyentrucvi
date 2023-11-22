@@ -7,13 +7,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProductView {
-    private Scanner scanner = new Scanner(System.in);
-    private ProductController productController = new ProductController();
+    private final Scanner scanner = new Scanner(System.in);
+    private final ProductController productController = new ProductController();
 
     public void menuProduct() {
+
         int choice;
         do {
-            System.out.println("1. thêm sản phâm");
+            System.out.println("1.thêm sản phâm");
             System.out.println("2.sửa sản phẩm");
             System.out.println("3.hiển thị sản phẩm");
             System.out.println("4.xóa sản phẩm");
@@ -24,6 +25,35 @@ public class ProductView {
                     Product product = InputProduct();
                     productController.addProduct(product);
                     System.out.println("thêm mới thành công");
+                    break;
+                case 2:
+                    System.out.println("nhập id muốn sửa");
+                    String id1 = scanner.nextLine();
+                    if (productController.checkId(id1)) {
+                        List<Product> products = productController.comfirmId(id1);
+                        System.out.println(products);
+                        System.out.println("1.sửa name \n "
+                                + "2.sửa price \n"
+                        );
+                        choice = Integer.parseInt(scanner.nextLine());
+                        switch (choice) {
+                            case 1:
+                                System.out.println("nhập tên mới");
+                                String name = scanner.nextLine();
+                                productController.editName(id1, name);
+                                System.out.println("sửa thành công");
+                                break;
+                            case 2:
+                                System.out.println("nhập giá mới");
+                               String price=scanner.nextLine();
+                               productController.editPrice(id1, Double.valueOf(price));
+                                System.out.println("sửa thành công");
+                        }
+
+
+                    }
+
+
                     break;
                 case 3:
                     List<Product> products = productController.getAll();
@@ -40,15 +70,26 @@ public class ProductView {
                         System.out.println(" thông tin sản phẩm cần xóa" + remove);
                         System.out.println("bạn có muốn xóa? y/n:");
                         String confirm = scanner.nextLine();
-                        if (confirm.equals("y")) ;
-                        productController.remove(id);
-                        System.out.println("xóa thành công");
+                        do {
+                            switch (confirm) {
+                                case "y":
+                                    productController.remove(id);
+                                    System.out.println("xóa thành công");
+                                    break;
+                                case "n":
+                                    return;
+
+                                default:
+                                    System.out.println("nhập sai rồi nhập lại");
+                                    confirm = scanner.nextLine();
+                            }
+
+                        } while (true);
                     }
-                    break;
                 case 0:
                     System.exit(0);
             }
-        } while (choice != 0);
+        } while (true);
     }
 
 

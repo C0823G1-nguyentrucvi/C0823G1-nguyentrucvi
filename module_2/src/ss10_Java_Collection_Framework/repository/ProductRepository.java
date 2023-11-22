@@ -31,14 +31,65 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public void remove(String id) {
-        for (Product product: products){
-            if(product.getId().equals(id)){
+        for (Product product : products) {
+            if (product.getId().equals(id)) {
                 products.remove(product);
                 break;
             }
         }
     }
 
+    @Override
+    public boolean checkId(String id) {
+        for (Product product : products) {
+            if (product.getId().equals(id)) {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    @Override
+    public List<Product> comfirmId(String id1) {
+        List<Product> productList = new ArrayList<>();
+        for (Product product : products) {
+            if (product.getId().contains(id1)) ;
+            productList.add(product);
+        }
+        return productList;
+    }
+
+    @Override
+    public void editName(String id1, String name) {
+        for (Product product:products){
+            if(product.getId().equals(id1)){
+                product.setName(name);
+            }
+        }
+    }
+
+    @Override
+    public void editPrice(String id1, String price) {
+        for (Product product: products){
+            if(product.getId().equals(id1)){
+                product.getPrice(Double.valueOf(price));
+            }
+        }
+
+
+
+
+}
+
+    @Override
+    public void editPrice(String id1, Double price) {
+        for (Product product: products){
+            if(product.getId().equals(id1)){
+                product.getPrice(price);
+            }
+        }
+    }
 }
 
 

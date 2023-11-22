@@ -5,7 +5,5 @@ import ss12_lamthem.models.Student;
 import java.util.List;
 
 public interface IStudentService {
-    void addStudent(Student student);
 
-    List<Student> getAll();
 }

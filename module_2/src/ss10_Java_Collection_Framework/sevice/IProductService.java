@@ -15,4 +15,16 @@ public interface IProductService {
     Product findById(String id);
 
     void remove(String id);
+
+    boolean checkId(String id);
+
+    List<Product> comfirmId(String id1);
+
+    void editName(String id1, String name);
+
+    void editPrice(String id1, String price);
+
+    void editPrice(String id1, Double price);
+
+    // void editPrice(String id1, Double price);
 }

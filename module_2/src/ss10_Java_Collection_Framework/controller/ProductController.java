@@ -25,6 +25,23 @@ public class ProductController {
     public void remove(String id) {
         productService.remove(id);
     }
+
+    public boolean checkId(String id) {
+         return productService.checkId(id);
+    }
+
+    public List<Product> comfirmId(String id1) {
+
+        return productService.comfirmId(id1);
+    }
+
+    public void editName(String id1, String name) {
+        productService.editName(id1,name);
+    }
+
+    public void editPrice(String id1, Double price) {
+        productService.editPrice(id1, String.valueOf(price));
+    }
 }
 
 

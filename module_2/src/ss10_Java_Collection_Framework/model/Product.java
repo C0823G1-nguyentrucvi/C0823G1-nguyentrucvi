@@ -1,11 +1,5 @@
 package ss10_Java_Collection_Framework.model;
 
-import ss10_Java_Collection_Framework.controller.ProductController;
-import ss10_Java_Collection_Framework.sevice.ProductService;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Product {
     private String id;
     private String name;
@@ -20,6 +14,8 @@ public class Product {
         this.name = name;
         this.price = price;
     }
+
+
 
 
     public String getId() {
@@ -38,8 +34,8 @@ public class Product {
         this.name = name;
     }
 
-    public Double getPrice() {
-        return price;
+    public Double getPrice(Double price) {
+        return this.price;
     }
 
     public void setPrice(Double price) {

@@ -1,10 +1,8 @@
 package ss10_Java_Collection_Framework.sevice;
 
-import ss10_Java_Collection_Framework.controller.ProductController;
 import ss10_Java_Collection_Framework.model.Product;
 import ss10_Java_Collection_Framework.repository.IProductRepository;
 import ss10_Java_Collection_Framework.repository.ProductRepository;
-import ss7_mvc.service.StudentService;
 
 import java.util.List;
 
@@ -31,4 +29,27 @@ public class ProductService implements IProductService {
     public void remove(String id) {
         productRepository.remove(id);
     }
+
+    @Override
+    public boolean checkId(String id) {
+        return productRepository.checkId(id);
+    }
+
+    @Override
+    public List<Product> comfirmId(String id1) {
+        return productRepository.comfirmId(id1);
+    }
+
+    @Override
+    public void editName(String id1, String name) {
+        productRepository.editName(id1,name);
+    }
+
+    @Override
+    public void editPrice(String id1, String price){
+
+    }
+
+
+
 }
