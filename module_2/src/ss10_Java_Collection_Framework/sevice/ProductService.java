@@ -9,7 +9,8 @@ import ss7_mvc.service.StudentService;
 import java.util.List;
 
 public class ProductService implements IProductService {
-private IProductRepository productRepository=new ProductRepository();
+    private IProductRepository productRepository = new ProductRepository();
+
     @Override
     public void save(Product product) {
         productRepository.save(product);

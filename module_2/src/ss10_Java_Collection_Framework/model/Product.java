@@ -22,7 +22,6 @@ public class Product {
     }
 
 
-
     public String getId() {
         return id;
     }
@@ -55,7 +54,6 @@ public class Product {
                 ", price=" + price +
                 '}';
     }
-
 
 
 }
