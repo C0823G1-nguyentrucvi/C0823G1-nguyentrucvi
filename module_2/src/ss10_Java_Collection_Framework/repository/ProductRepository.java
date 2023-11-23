@@ -8,6 +8,10 @@ import java.util.List;
 public class ProductRepository implements IProductRepository {
     private List<Product> products = new ArrayList<>();
 
+    {
+        products.add(new Product("1", "TrucVi", 1000d));
+        products.add(new Product("2", "TrucTham", 2000d));
+    }
 
     @Override
     public List<Product> findAll() {
@@ -62,31 +66,18 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public void editName(String id1, String name) {
-        for (Product product:products){
-            if(product.getId().equals(id1)){
+        for (Product product : products) {
+            if (product.getId().equals(id1)) {
                 product.setName(name);
             }
         }
     }
 
     @Override
-    public void editPrice(String id1, String price) {
-        for (Product product: products){
-            if(product.getId().equals(id1)){
-                product.getPrice(Double.valueOf(price));
-            }
-        }
-
-
-
-
-}
-
-    @Override
     public void editPrice(String id1, Double price) {
-        for (Product product: products){
-            if(product.getId().equals(id1)){
-                product.getPrice(price);
+        for (Product product : products) {
+            if (product.getId().equals(id1)) {
+                product.setPrice(price);
             }
         }
     }

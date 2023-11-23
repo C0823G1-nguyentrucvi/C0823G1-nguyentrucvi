@@ -45,8 +45,8 @@ public class ProductView {
                                 break;
                             case 2:
                                 System.out.println("nhập giá mới");
-                               String price=scanner.nextLine();
-                               productController.editPrice(id1, Double.valueOf(price));
+                               double price= Double.parseDouble(scanner.nextLine());
+                               productController.editPrice(id1,price);
                                 System.out.println("sửa thành công");
                         }
 
@@ -99,7 +99,7 @@ public class ProductView {
         System.out.println("nhập name");
         String name = scanner.nextLine();
         System.out.println("nhập giá");
-        Double price = Double.valueOf(scanner.nextLine());
+        double price = Double.parseDouble(scanner.nextLine());
         return new Product(id, name, price);
     }
 

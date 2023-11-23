@@ -40,7 +40,7 @@ public class ProductController {
     }
 
     public void editPrice(String id1, Double price) {
-        productService.editPrice(id1, String.valueOf(price));
+        productService.editPrice(id1, price);
     }
 }
 

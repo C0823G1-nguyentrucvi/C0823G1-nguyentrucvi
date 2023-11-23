@@ -46,10 +46,9 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void editPrice(String id1, String price){
-
+    public void editPrice(String id1, Double price) {
+        productRepository.editPrice(id1, price);
     }
-
 
 
 }

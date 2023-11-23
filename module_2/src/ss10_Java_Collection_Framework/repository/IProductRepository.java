@@ -20,7 +20,5 @@ public interface IProductRepository {
 
     void editName(String id1, String name);
 
-    void editPrice(String id1, String price);
-
     void editPrice(String id1, Double price);
 }
