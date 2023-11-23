@@ -11,7 +11,8 @@ public class insertionSort {
     }
 
      public static int[] insertionSort(int[] list){
-            int pos, x;
+            int pos;
+            int x;
             for (int i = 1; i < list.length; i++) {
                 x = list[i];
                 pos = i;

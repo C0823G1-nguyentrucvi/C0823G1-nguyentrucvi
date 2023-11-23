@@ -5,7 +5,8 @@ import java.util.Arrays;
 public class insert {
     public static void main(String[] args) {
         int[] array = {1, 9, 4, 3, 7, 5, 6, 8};
-        int pos, x;
+        int pos;
+        int x;
         for (int i = 1; i < array.length; i++) {
             x = array[i];
             pos = i;
