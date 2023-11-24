@@ -2,7 +2,9 @@ package ss14_exception;
 
 import java.util.Scanner;
 
-public class ViException {
+public class TriangleException {
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("nhập a");
@@ -17,12 +19,12 @@ public class ViException {
         } catch (IllegalTriangleException e) {
             System.out.println(e.getMessage());
         }finally {
-            System.out.println("Done");
+            System.out.println("Done ");
         }
     }
 
     private static void inputTriangle(double a, double b, double c) throws IllegalTriangleException {
-        if (a < 0 || b < 0 || c < 0 || a + b <= c || a + c <= b || b + c <= a) {
+        if ((a < 0 || b < 0 || c < 0 )|| (a + b <= c || a + c <= b || b + c <= a)) {
             throw new IllegalTriangleException("Khong phai canh tam giac");
         }
     }
