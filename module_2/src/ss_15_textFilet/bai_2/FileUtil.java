@@ -15,12 +15,13 @@ public class FileUtil {
         Nation nation;
         FileReader fileReader = null;
         BufferedReader bufferedReader = null;
+        String[] tempStr;
         try {
             fileReader = new FileReader(FILE_PATH);
             bufferedReader = new BufferedReader(fileReader);
             String temp;
             while ((temp = bufferedReader.readLine()) != null){
-                String[] tempStr = temp.split(",");
+                 tempStr = temp.split(",");
                 nation = new Nation(Integer.parseInt(tempStr[0]), tempStr[1], tempStr[2]);
                 nations.add(nation);
             }

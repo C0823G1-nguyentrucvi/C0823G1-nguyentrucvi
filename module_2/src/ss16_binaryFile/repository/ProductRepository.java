@@ -13,33 +13,33 @@ public class ProductRepository implements IProductRepository {
     @Override
     public List<Product> findAll() {
         //Doc tu file ra
-        List<Product> products=FileService.docDuLieuTuFile(PRODUCT_PATH_FILE);
+        List<Product> products = FileService.readFile(PRODUCT_PATH_FILE);
 
         return products;
     }
 
     @Override
     public List<Product> getAll() {
-        List<Product> productList=FileService.docDuLieuTuFile(PRODUCT_PATH_FILE);
-      return productList;
-    }
-
-    @Override
-    public List<Product> findProductsByName(String name) {
-//        List<Product> productList = FileService.docDuLieuTuFile(PRODUCT_PATH_FILE);
-        List<Product> productList = new ArrayList<>();
-        for (Product product: productList) {
-            if (product.getName().contains(name)) {
-                productList.add(product);
-            }
-        }
+        List<Product> productList = FileService.readFile(PRODUCT_PATH_FILE);
         return productList;
     }
 
     @Override
+    public List<Product> findProductsByName(String name) {
+        List<Product> productList = FileService.readFile(PRODUCT_PATH_FILE);
+        List<Product> productArray = new ArrayList<>();
+        for (Product product : productList) {
+            if (product.getName().contains(name)) {
+                productArray.add(product);
+            }
+        }
+        return productArray;
+    }
+
+    @Override
     public void addProduct(Product product) {
-  List<Product> products=FileService.docDuLieuTuFile(PRODUCT_PATH_FILE);
-  products.add(product);
-  FileService.ghiDuLieuVaoFile(PRODUCT_PATH_FILE,products);
+        List<Product> products = FileService.readFile(PRODUCT_PATH_FILE);
+        products.add(product);
+        FileService.writeFile(PRODUCT_PATH_FILE, products);
     }
 }

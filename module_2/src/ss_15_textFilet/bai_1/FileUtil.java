@@ -31,16 +31,21 @@ public class FileUtil {
         return temp;
     }
 
-    public static void WriteCSV(String temp, String file_target) {
+    public static void writeCSV(String temp, String file_target) {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {
             fileWriter = new FileWriter(file_target);
             bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write(temp);
-            bufferedWriter.close();
         } catch (IOException e) {
             System.out.println("file not found");
+        }finally {
+            try {
+                bufferedWriter.close();
+            } catch (IOException e) {
+                System.out.println("file not found");
+            }
         }
         }
 
@@ -48,7 +53,7 @@ public class FileUtil {
     public static void main(String[] args) {
         try {
             System.out.println(readCSV(FILE_PATH));
-            WriteCSV(readCSV(FILE_PATH), FILE_TARGET);
+            writeCSV(readCSV(FILE_PATH), FILE_TARGET);
         } catch (RuntimeException e) {
             System.out.println("không tìm thấy");
         }

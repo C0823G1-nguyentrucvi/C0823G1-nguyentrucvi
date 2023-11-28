@@ -7,9 +7,10 @@ import java.util.List;
 
 public class TestDocGhiFile {
     private static final String DUONG_DAN = "src/ss16_binaryFile/doc/product.txt";
-//String code, String name, Float price, String manufacture, String describe
+
+    //String code, String name, Float price, String manufacture, String describe
     public static void main(String[] args) {
-        List<Product> products = FileService.docDuLieuTuFile(DUONG_DAN);
+        List<Product> products = FileService.readFile(DUONG_DAN);
 
 //        products.add(new Product("TrucVi-123", "TrucVi", 1000f, "Hello", "Mo ta"));
 //        products.add(new Product("TrucVi-456", "TrucVi1", 2000f, "Iphone", "Mo ta 2"));
@@ -19,7 +20,7 @@ public class TestDocGhiFile {
 //        products.add(new Product("q","w",2f,"o","p"));
 //        FileService.ghiDuLieuVaoFile(DUONG_DAN,products);
 
-        for (Product product:products) {
+        for (Product product : products) {
             System.out.println(product);
         }
     }
