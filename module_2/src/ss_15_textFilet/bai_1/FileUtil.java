@@ -4,36 +4,54 @@ import java.io.*;
 
 public class FileUtil {
     private static final String FILE_PATH = "D:\\codegym\\C0823G1-nguyentrucvi\\module_2\\src\\ss_15_textFilet\\bai_1\\ListMilk.csv";
-    private static final String FILE_TARGET="D:\\codegym\\C0823G1-nguyentrucvi\\module_2\\src\\ss_15_textFilet\\bai_1\\targer_file.csv";
+    private static final String FILE_TARGET = "D:\\codegym\\C0823G1-nguyentrucvi\\module_2\\src\\ss_15_textFilet\\bai_1\\targer_file.csv";
 
-    public static String readCSV(String filePath) throws IOException {
-        FileReader fileReader = new FileReader(filePath);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-
+    public static String readCSV(String filePath) {
+        FileReader fileReader = null;
+        BufferedReader bufferedReader = null;
         String temp = "";
-        String line ;
-        while ((line = bufferedReader.readLine()) != null) {
-            temp += line+"\n";
 
+        try {
+            fileReader = new FileReader(filePath);
+            bufferedReader = new BufferedReader(fileReader);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                temp += line + "\n";
+            }
+
+        } catch (IOException e) {
+            System.out.println("file not found");
+        } finally {
+            try {
+                bufferedReader.close();
+            } catch (IOException e) {
+                System.out.println("file not found");
+            }
         }
-        bufferedReader.close();
         return temp;
     }
 
-    public static void WriteCSV(String temp, String file_target) throws IOException {
-        FileWriter fileWriter=new FileWriter(file_target);
-        BufferedWriter bufferedWriter =new BufferedWriter(fileWriter);
-        bufferedWriter.write(temp);
-        bufferedWriter.close();
-    }
+    public static void WriteCSV(String temp, String file_target) {
+        FileWriter fileWriter = null;
+        BufferedWriter bufferedWriter = null;
+        try {
+            fileWriter = new FileWriter(file_target);
+            bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(temp);
+            bufferedWriter.close();
+        } catch (IOException e) {
+            System.out.println("file not found");
+        }
+        }
 
-    public static void main(String[] args)  {
-       try {
-           System.out.println(readCSV(FILE_PATH));
-           WriteCSV(readCSV(FILE_PATH), FILE_TARGET);
-       } catch (IOException e){
-           System.out.println("không tìm thấy");
-       }
+
+    public static void main(String[] args) {
+        try {
+            System.out.println(readCSV(FILE_PATH));
+            WriteCSV(readCSV(FILE_PATH), FILE_TARGET);
+        } catch (RuntimeException e) {
+            System.out.println("không tìm thấy");
+        }
     }
 
 
