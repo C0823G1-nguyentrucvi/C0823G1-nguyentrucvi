@@ -8,14 +8,14 @@ public class Telephone {
     public static void main(String[] args) {
         System.out.println("nhap so dien thoại");
         Scanner scanner = new Scanner(System.in);
-        String telephone = scanner.nextLine();
+        String validateTelephoneClass = scanner.nextLine();
         while (true) {
-            if (phone(telephone)) {
+            if (phone(validateTelephoneClass)) {
                 break;
             } else {
                 System.out.println("sai định dạng");
                 System.out.println("nhap so dien thoại");
-                telephone = scanner.nextLine();
+                validateTelephoneClass = scanner.nextLine();
             }
 
         }

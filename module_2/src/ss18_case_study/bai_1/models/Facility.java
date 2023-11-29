@@ -2,18 +2,18 @@ package ss18_case_study.bai_1.models;
 
 import java.util.Date;
 
-public class Resort {
+public class Facility {
 private String codeService;
 private String nameService;
-private int area;
+private Double area;
 private float expense;
 private int remember;
 private Date time;
 
-    public Resort() {
+    public Facility() {
     }
 
-    public Resort(String codeService, String nameService, int area, float expense, int remember, Date time) {
+    public Facility(String codeService, String nameService, Double area, float expense, int remember, Date time) {
         this.codeService = codeService;
         this.nameService = nameService;
         this.area = area;
@@ -38,11 +38,11 @@ private Date time;
         this.nameService = nameService;
     }
 
-    public int getArea() {
+    public double getArea() {
         return area;
     }
 
-    public void setArea(int area) {
+    public void setArea(double area) {
         this.area = area;
     }
 

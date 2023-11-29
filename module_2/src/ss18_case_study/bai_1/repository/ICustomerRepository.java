@@ -1,4 +1,4 @@
 package ss18_case_study.bai_1.repository;
 
-public class ResortRepository {
+public interface ICustomerRepository {
 }

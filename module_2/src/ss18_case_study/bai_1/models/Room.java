@@ -1,6 +1,6 @@
 package ss18_case_study.bai_1.models;
 
-public class Room {
+public class Room extends Facility {
     private String freeDV;
 
     public Room(String freeDV) {

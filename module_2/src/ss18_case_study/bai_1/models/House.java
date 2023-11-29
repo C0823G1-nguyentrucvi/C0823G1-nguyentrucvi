@@ -1,6 +1,6 @@
 package ss18_case_study.bai_1.models;
 
-public class House {
+public class House extends Facility {
     private String standard;
     private int quantity;
 
