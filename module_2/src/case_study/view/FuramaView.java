@@ -1,8 +1,14 @@
 package case_study.view;
 
+import case_study.common.ExceptionInteger;
+import case_study.controller.FuramaControllers;
+import case_study.model.Employee;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class FuramaView {
+    private final FuramaControllers furamaControllers = new FuramaControllers();
     private final Scanner scanner = new Scanner(System.in);
 
     public void renderView() {
@@ -19,7 +25,7 @@ public class FuramaView {
                     "5. Promotion Management\n" +
                     "0. Exit\n");
             System.out.print("Your choice: ");
-            int choice = Exception.checkInteger();
+            int choice = ExceptionInteger.checkInteger();
             switch (choice) {
                 case 2:
                     showCustomerMenu();
@@ -49,7 +55,7 @@ public class FuramaView {
         System.out.println("1.\tDisplay list customers use service\n" +
                 "2.\tDisplay list customers get voucher\n" +
                 "3.\tReturn main menu\n");
-       int choice = Integer.parseInt(scanner.nextLine());
+        int choice = ExceptionInteger.checkInteger();
         switch (choice) {
             case 1:
             case 2:
@@ -65,7 +71,7 @@ public class FuramaView {
                 "4.\tDisplay list contracts\n" +
                 "5.\tEdit contracts\n" +
                 "6.\tReturn main menu\n");
-       int choice = Integer.parseInt(scanner.nextLine());
+        int choice = ExceptionInteger.checkInteger();
         switch (choice) {
             case 1:
             case 2:
@@ -84,7 +90,7 @@ public class FuramaView {
                 "3\tDisplay list facility maintenance\n" +
                 "4\tDelete facility\n" +
                 "5\tReturn main menu\n");
-      int  choice = Integer.parseInt(scanner.nextLine());
+        int choice = ExceptionInteger.checkInteger();
         switch (choice) {
             case 1:
             case 2:
@@ -102,16 +108,55 @@ public class FuramaView {
                 "4 Delete employee\n" +
                 "5 Search by name employee\n" +
                 "6 Return main menu\n");
-       int choice = Integer.parseInt(scanner.nextLine());
+        int choice = ExceptionInteger.checkInteger();
         switch (choice) {
             case 1:
+                List<Employee> employees = this.furamaControllers.finAll();
+                this.displayEmployees(employees);
+                break;
             case 2:
+                Employee employee = addEmployee();
+                this.furamaControllers.finAdd();
+                break;
             case 3:
+                editEmployee();
+                break;
             case 4:
+                deleteEmployee();
+                break;
             case 5:
+                searchEmployee();
+                break;
             case 6:
                 break;
         }
+    }
+
+
+    private void searchEmployee() {
+
+    }
+
+    private void deleteEmployee() {
+
+    }
+
+    private void editEmployee() {
+
+    }
+
+    private Employee addEmployee() {
+Employee employee=this.furamaControllers
+
+
+        return addEmployee();
+    }
+
+    private void displayEmployees(List<Employee> employees) {
+        for (Employee employee : employees) {
+            System.out.println(employee);
+        }
+
     }
 
     private void showCustomerMenu() {
@@ -123,7 +168,7 @@ public class FuramaView {
                     "5. Search by name customer\n" +
                     "6. Return main menu\n");
             System.out.print("Your choice: ");
-            int choice = Exception.checkException();
+            int choice = ExceptionInteger.checkInteger();
             switch (choice) {
                 case 1:
                     displayCustomer();

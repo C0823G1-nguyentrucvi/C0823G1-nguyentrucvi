@@ -1,4 +1,0 @@
-package ss18_case_study.bai_1.repository;
-
-public class EmployeeRepository implements IEmployeeRepository{
-}
