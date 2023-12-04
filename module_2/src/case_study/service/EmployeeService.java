@@ -8,16 +8,16 @@ import case_study.repository.IEmployeeRepository;
 import java.util.List;
 
 public class EmployeeService implements IEmployeeService {
-    private static IEmployeeRepository iEmployeeRepository = new EmployeeRepository();
+    private IEmployeeRepository iEmployeeRepository = new EmployeeRepository();
 
     @Override
-    public List<Employee> finAll() {
-        return iEmployeeRepository.finAll();
+    public List<Employee> findAll() {
+        return iEmployeeRepository.findAll();
     }
 
     @Override
-    public void finAdd() {
-        iEmployeeRepository.finAdd();
+    public void save(Employee employee) {
+        this.iEmployeeRepository.save(employee);
     }
 
 

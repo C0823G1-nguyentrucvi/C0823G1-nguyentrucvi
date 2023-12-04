@@ -1,26 +1,23 @@
 package case_study.repository;
 
-import case_study.common.ReadFile;
+import case_study.common.FileService;
 import case_study.model.Employee;
 
-import java.io.IOException;
 import java.util.List;
 
 public class EmployeeRepository implements IEmployeeRepository {
-    private ReadFile readFile = new ReadFile();
+    private FileService fileService = new FileService();
 
     @Override
-    public List<Employee> finAll() {
-        return readFile.readFile();
+    public List<Employee> findAll() {
+        return fileService.readEmployees();
     }
 
     @Override
-    public void finAdd() {
-        try {
-            readFile.writeFile();
-        } catch (IOException e) {
-            System.out.println("error");
-        }
+    public void save(Employee employee) {
+        List<Employee> employees = fileService.readEmployees();
+        employees.add(employee);
+        fileService.writeEmployee(employees);
     }
 
 }

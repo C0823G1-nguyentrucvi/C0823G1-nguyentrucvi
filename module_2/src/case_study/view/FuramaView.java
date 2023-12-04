@@ -1,14 +1,18 @@
 package case_study.view;
 
-import case_study.common.ExceptionInteger;
-import case_study.controller.FuramaControllers;
+import case_study.common.DateHandler;
+import case_study.common.ExceptionHandler;
+import case_study.common.RegexHandler;
+import case_study.controller.FuramaController;
+import case_study.model.Customer;
 import case_study.model.Employee;
+
 
 import java.util.List;
 import java.util.Scanner;
 
 public class FuramaView {
-    private final FuramaControllers furamaControllers = new FuramaControllers();
+    private final FuramaController furamaController = new FuramaController();
     private final Scanner scanner = new Scanner(System.in);
 
     public void renderView() {
@@ -25,7 +29,7 @@ public class FuramaView {
                     "5. Promotion Management\n" +
                     "0. Exit\n");
             System.out.print("Your choice: ");
-            int choice = ExceptionInteger.checkInteger();
+            int choice = ExceptionHandler.checkParseInteger();
             switch (choice) {
                 case 2:
                     showCustomerMenu();
@@ -55,7 +59,7 @@ public class FuramaView {
         System.out.println("1.\tDisplay list customers use service\n" +
                 "2.\tDisplay list customers get voucher\n" +
                 "3.\tReturn main menu\n");
-        int choice = ExceptionInteger.checkInteger();
+        int choice = ExceptionHandler.checkParseInteger();
         switch (choice) {
             case 1:
             case 2:
@@ -71,7 +75,7 @@ public class FuramaView {
                 "4.\tDisplay list contracts\n" +
                 "5.\tEdit contracts\n" +
                 "6.\tReturn main menu\n");
-        int choice = ExceptionInteger.checkInteger();
+        int choice = ExceptionHandler.checkParseInteger();
         switch (choice) {
             case 1:
             case 2:
@@ -90,7 +94,7 @@ public class FuramaView {
                 "3\tDisplay list facility maintenance\n" +
                 "4\tDelete facility\n" +
                 "5\tReturn main menu\n");
-        int choice = ExceptionInteger.checkInteger();
+        int choice = ExceptionHandler.checkParseInteger();
         switch (choice) {
             case 1:
             case 2:
@@ -108,15 +112,14 @@ public class FuramaView {
                 "4 Delete employee\n" +
                 "5 Search by name employee\n" +
                 "6 Return main menu\n");
-        int choice = ExceptionInteger.checkInteger();
+        int choice = ExceptionHandler.checkParseInteger();
         switch (choice) {
             case 1:
-                List<Employee> employees = this.furamaControllers.finAll();
+                List<Employee> employees = this.furamaController.findAll();
                 this.displayEmployees(employees);
                 break;
             case 2:
-                Employee employee = addEmployee();
-                this.furamaControllers.finAdd();
+                addNewEmployee();
                 break;
             case 3:
                 editEmployee();
@@ -132,6 +135,29 @@ public class FuramaView {
         }
     }
 
+    private void addNewEmployee() {
+        System.out.print("Enter code: ");
+        String code = RegexHandler.checkRegexEmployeeCode();
+        System.out.print("Enter name: ");
+        String name = RegexHandler.checkRegexName();
+        System.out.print("Enter date: ");
+        String date = DateHandler.is18YearOld();
+        System.out.print("Enter identity: ");
+        Integer identity = ExceptionHandler.checkParseInteger();
+        System.out.print("Enter phone number: ");
+        String phoneNumber = RegexHandler.checkPhoneNumber();
+        System.out.print("Enter gmail: ");
+        String gmail = scanner.nextLine();
+        System.out.print("Enter level: ");
+        String level = scanner.nextLine();
+        System.out.print("Enter position: ");
+        String position = scanner.nextLine();
+        System.out.print("Enter money: ");
+        Double money = ExceptionHandler.checkParseDouble();
+        Employee employee = new Employee(code, name, date, identity, phoneNumber, gmail, level, position, money);
+        this.furamaController.save(employee);
+    }
+
 
     private void searchEmployee() {
 
@@ -143,13 +169,6 @@ public class FuramaView {
 
     private void editEmployee() {
 
-    }
-
-    private Employee addEmployee() {
-Employee employee=this.furamaControllers
-
-
-        return addEmployee();
     }
 
     private void displayEmployees(List<Employee> employees) {
@@ -168,10 +187,14 @@ Employee employee=this.furamaControllers
                     "5. Search by name customer\n" +
                     "6. Return main menu\n");
             System.out.print("Your choice: ");
-            int choice = ExceptionInteger.checkInteger();
+            int choice = ExceptionHandler.checkParseInteger();
             switch (choice) {
                 case 1:
-                    displayCustomer();
+                    List<Customer> customerList = this.furamaController.findAlls();
+                    this.displayCustomer(customerList);
+                    break;
+                case 2:
+                    addNewCustomer();
                     break;
                 case 0:
                     return;
@@ -182,7 +205,32 @@ Employee employee=this.furamaControllers
         }
     }
 
-    private void displayCustomer() {
+    private void addNewCustomer() {
+        System.out.print("Enter code: ");
+        String code = scanner.nextLine();
+        System.out.print("Enter name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter date: ");
+        String date = DateHandler.is18YearOld();
+        System.out.print("Enter identity: ");
+        Integer identity = ExceptionHandler.checkParseInteger();
+        System.out.print("Enter phone number: ");
+        String phoneNumber = scanner.nextLine();
+        System.out.print("Enter gmail: ");
+        String gmail = scanner.nextLine();
+        System.out.print("Enter customer type: ");
+        String customerType = scanner.nextLine();
+        System.out.print("Enter address: ");
+        String address = scanner.nextLine();
+        Customer customer = new Customer(code, name, date, identity, phoneNumber, gmail, customerType,
+                address);
+        this.furamaController.saveCustomer(customer);
+    }
+
+    private void displayCustomer(List<Customer> customer) {
+        for (Customer customers : customer) {
+            System.out.println(customers);
+        }
 
     }
 }

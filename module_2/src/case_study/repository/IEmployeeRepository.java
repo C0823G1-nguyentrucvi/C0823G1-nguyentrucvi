@@ -5,8 +5,7 @@ import case_study.model.Employee;
 import java.util.List;
 
 public interface IEmployeeRepository {
-    List<Employee> finAll();
+    List<Employee> findAll();
 
-    void finAdd();
-
+    void save(Employee employee);
 }

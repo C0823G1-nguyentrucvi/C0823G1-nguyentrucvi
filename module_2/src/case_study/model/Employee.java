@@ -2,14 +2,14 @@ package case_study.model;
 
 public class Employee extends Person {
     private String level;
-    private String index;
+    private String position;
     private Double money;
 
-    public Employee(String code, String name, String date, Integer identity, Integer phoneNumber, String gmail,
-                    String level, String index, Double money) {
+    public Employee(String code, String name, String date, Integer identity, String phoneNumber, String gmail,
+                    String level, String position, Double money) {
         super(code, name, date, identity, phoneNumber, gmail);
         this.level = level;
-        this.index = index;
+        this.position = position;
         this.money = money;
     }
 
@@ -21,12 +21,12 @@ public class Employee extends Person {
         this.level = level;
     }
 
-    public String getIndex() {
-        return index;
+    public String getPosition() {
+        return position;
     }
 
-    public void setIndex(String index) {
-        this.index = index;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public Double getMoney() {
@@ -35,6 +35,10 @@ public class Employee extends Person {
 
     public void setMoney(Double money) {
         this.money = money;
+    }
+
+    public String convertToLine() {
+        return super.getCode() + "," + super.getName() + "," + super.getDate() + "," + super.getIdentity() + "," + super.getPhoneNumber() + "," + super.getGmail() + "," + this.getLevel() + "," + this.getPosition() + "," + this.getMoney();
     }
 
     @Override
@@ -47,7 +51,7 @@ public class Employee extends Person {
                 ", phoneNumber=" + super.getPhoneNumber() +
                 ", gmail='" + super.getGmail() + '\'' +
                 ",level='" + level + '\'' +
-                ", index='" + index + '\'' +
+                ", index='" + position + '\'' +
                 ", money=" + money +
                 '}';
     }

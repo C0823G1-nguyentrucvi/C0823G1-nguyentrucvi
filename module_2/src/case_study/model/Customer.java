@@ -1,30 +1,34 @@
 package case_study.model;
 
 public class Customer extends Person {
-    private String CustomerType;
-    private String Address;
+    private String customerType;
+    private String address;
 
-    public Customer(String code, String name, String date, Integer identity, Integer phoneNumber, String gmail,
+    public Customer(String code, String name, String date, Integer identity, String phoneNumber, String gmail,
                     String CustomerType, String Address) {
         super(code, name, date, identity, phoneNumber, gmail);
-        this.CustomerType = CustomerType;
-        this.Address = Address;
+        this.customerType = CustomerType;
+        this.address = Address;
     }
 
     public String getCustomerType() {
-        return CustomerType;
+        return customerType;
     }
 
     public void setCustomerType(String customerType) {
-        CustomerType = customerType;
+        this.customerType = customerType;
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        this.address = address;
+    }
+
+    public String convertToLine() {
+        return super.getCode() + "," + super.getName() + "," + super.getDate() + "," + getIdentity() + "," + super.getPhoneNumber() + "," + super.getGmail() + "," + this.customerType + "," + this.address;
     }
 
     @Override
@@ -36,8 +40,8 @@ public class Customer extends Person {
                 ", identity=" + super.getIdentity() +
                 ", phoneNumber=" + super.getPhoneNumber() +
                 ", gmail='" + super.getGmail() + '\'' +
-                "CustomerType='" + CustomerType + '\'' +
-                ", Address='" + Address + '\'' +
+                "CustomerType='" + customerType + '\'' +
+                ", Address='" + address + '\'' +
                 '}';
     }
 }

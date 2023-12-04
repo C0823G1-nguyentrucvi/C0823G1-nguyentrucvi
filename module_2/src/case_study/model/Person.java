@@ -5,10 +5,10 @@ public class Person {
     private String name;
     private String date;
     private Integer identity;
-    private Integer phoneNumber;
+    private String phoneNumber;
     private String gmail;
 
-    public Person(String code, String name, String date, Integer identity, Integer phoneNumber, String gmail) {
+    public Person(String code, String name, String date, Integer identity, String phoneNumber, String gmail) {
         this.code = code;
         this.name = name;
         this.date = date;
@@ -52,11 +52,11 @@ public class Person {
         this.identity = identity;
     }
 
-    public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
