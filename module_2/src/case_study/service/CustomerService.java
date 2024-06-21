@@ -18,4 +18,19 @@ public class CustomerService implements ICustomerService {
     public void save(Customer customer) {
         this.iCustomerRepository.save(customer);
     }
+
+    @Override
+    public Customer findByCodeCustomer(String code) {
+        return iCustomerRepository.findByCodeCustomer(code);
+    }
+
+    @Override
+    public void remove(String code) {
+        iCustomerRepository.remove(code);
+    }
+
+    @Override
+    public void updateCustomer(Customer customer) {
+        this.iCustomerRepository.updateCustomer(customer);
+    }
 }

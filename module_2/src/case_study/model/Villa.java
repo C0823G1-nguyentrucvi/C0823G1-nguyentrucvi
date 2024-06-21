@@ -1,16 +1,18 @@
 package case_study.model;
 
-public class Villa extends Facility{
+import java.util.Date;
+
+public class Villa extends Facility {
     private String standard;
-    private Double area;
+
     private int numberOfFloors;
 
     public Villa() {
     }
 
-    public Villa(String standard, Double area, int numberOfFloors) {
+    public Villa(String codeService, String nameService, Double area, float expense, int remember, String standard, int numberOfFloors) {
+        super(codeService, nameService, area, expense, remember);
         this.standard = standard;
-        this.area = area;
         this.numberOfFloors = numberOfFloors;
     }
 
@@ -22,13 +24,6 @@ public class Villa extends Facility{
         this.standard = standard;
     }
 
-    public double getArea() {
-        return area;
-    }
-
-    public void setArea(Double area) {
-        this.area = area;
-    }
 
     public int getNumberOfFloors() {
         return numberOfFloors;
@@ -42,7 +37,6 @@ public class Villa extends Facility{
     public String toString() {
         return "Villa{" +
                 "standard='" + standard + '\'' +
-                ", area=" + area +
                 ", numberOfFloors=" + numberOfFloors +
                 '}';
     }

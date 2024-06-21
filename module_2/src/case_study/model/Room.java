@@ -1,9 +1,10 @@
 package case_study.model;
 
-public class Room extends Facility{
+public class Room extends Facility {
     private String freeDV;
 
-    public Room(String freeDV) {
+    public Room(String codeService, String nameService, Double area, float expense, int remember, String freeDV) {
+        super(codeService, nameService, area, expense, remember);
         this.freeDV = freeDV;
     }
 

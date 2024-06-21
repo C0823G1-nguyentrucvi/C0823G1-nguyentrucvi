@@ -51,7 +51,7 @@ public class Employee extends Person {
                 ", phoneNumber=" + super.getPhoneNumber() +
                 ", gmail='" + super.getGmail() + '\'' +
                 ",level='" + level + '\'' +
-                ", index='" + position + '\'' +
+                ", position='" + position + '\'' +
                 ", money=" + money +
                 '}';
     }

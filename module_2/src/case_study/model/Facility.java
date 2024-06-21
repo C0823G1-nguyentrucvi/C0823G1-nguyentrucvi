@@ -8,18 +8,18 @@ public class Facility {
     private Double area;
     private float expense;
     private int remember;
-    private Date time;
+
 
     public Facility() {
     }
 
-    public Facility(String codeService, String nameService, Double area, float expense, int remember, Date time) {
+    public Facility(String codeService, String nameService, Double area, float expense, int remember) {
         this.codeService = codeService;
         this.nameService = nameService;
         this.area = area;
         this.expense = expense;
         this.remember = remember;
-        this.time = time;
+
     }
 
     public String getCodeService() {
@@ -62,13 +62,6 @@ public class Facility {
         this.remember = remember;
     }
 
-    public Date getTime() {
-        return time;
-    }
-
-    public void setTime(Date time) {
-        this.time = time;
-    }
 
     @Override
     public String toString() {
@@ -78,7 +71,6 @@ public class Facility {
                 ", area=" + area +
                 ", expense=" + expense +
                 ", remember=" + remember +
-                ", time=" + time +
                 '}';
     }
 }

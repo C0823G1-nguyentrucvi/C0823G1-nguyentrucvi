@@ -1,10 +1,12 @@
 package case_study.model;
 
-public class House extends Facility{
+public class House extends Facility {
     private String standard;
     private int quantity;
 
-    public House(String standard, int quantity) {
+
+    public House(String codeService, String nameService, Double area, float expense, int remember, String standard, int quantity) {
+        super(codeService, nameService, area, expense, remember);
         this.standard = standard;
         this.quantity = quantity;
     }

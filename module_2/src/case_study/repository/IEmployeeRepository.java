@@ -8,4 +8,11 @@ public interface IEmployeeRepository {
     List<Employee> findAll();
 
     void save(Employee employee);
+
+    Employee findByCode(String code);
+
+
+    void remove(Employee employee);
+
+    void update(Employee employee);
 }

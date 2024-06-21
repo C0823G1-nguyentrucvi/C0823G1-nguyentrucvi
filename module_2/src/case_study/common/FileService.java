@@ -9,12 +9,11 @@ import java.util.List;
 
 public class FileService {
     private final String FILE_EMPLOYEE_PATH = "src/case_study/data/employee.csv";
-    private static final String FILE_CUSTOMER_PATH = "src/case_study/data/customer.csv";
+    private  final String FILE_CUSTOMER_PATH = "src/case_study/data/customer.csv";
 
     public List<Customer> readCustomers() {
         List<Customer> customers = new ArrayList<>();
         List<String> strings = readFromFile(FILE_CUSTOMER_PATH);
-
         String[] temp;
         for (String s : strings) {
             temp = s.split(",");
@@ -58,7 +57,6 @@ public class FileService {
     // Ghi danh sách employee vào file
     public void writeEmployee(List<Employee> employees) {
         List<String> strings = new ArrayList<>();
-
         for (Employee employee : employees) {
             strings.add(employee.convertToLine());
         }
@@ -81,7 +79,6 @@ public class FileService {
         try {
             FileWriter fileWriter = new FileWriter(pathFile);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-
             for (String s : strings) {
                 bufferedWriter.write(s);
                 bufferedWriter.newLine();
@@ -101,7 +98,6 @@ public class FileService {
         try {
             FileReader fileReader = new FileReader(pathFile);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-
             String line;
             while (true) {
                 line = bufferedReader.readLine();

@@ -20,5 +20,20 @@ public class EmployeeService implements IEmployeeService {
         this.iEmployeeRepository.save(employee);
     }
 
+    @Override
+    public Employee findByCode(String code) {
+        return this.iEmployeeRepository.findByCode(code);
+    }
+
+    @Override
+    public void remove(Employee employee) {
+        this.iEmployeeRepository.remove(employee);
+    }
+
+    @Override
+    public void update(Employee employee) {
+        this.iEmployeeRepository.update(employee);
+    }
+
 
 }

@@ -8,4 +8,12 @@ public interface ICustomerRepository {
     List<Customer> findAllCustomer();
 
     void save(Customer customer);
+
+
+    Customer findByCodeCustomer(String code);
+
+    void remove(String code);
+
+    void updateCustomer(Customer customer);
+
 }
